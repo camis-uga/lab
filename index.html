@@ -1,12 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAMIs Lab @ UGA</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg: #f5f3ef;
@@ -18,8 +21,17 @@
       --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'DM Sans', system-ui, sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--bg);
       color: var(--ink);
@@ -28,10 +40,13 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    /* ── NAV ── */
+
+    /* NAV */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -41,19 +56,18 @@
       background: var(--bg);
       border-bottom: 1px solid var(--faint);
     }
+
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      letter-spacing: 0.01em;
       color: var(--ink);
       text-decoration: none;
     }
-    .nav-logo span { color: var(--red); }
+
     .nav-links {
       display: flex;
       gap: 2.5rem;
       list-style: none;
     }
+
     .nav-links a {
       font-size: 0.85rem;
       font-weight: 500;
@@ -63,24 +77,65 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--red); }
-    /* ── HERO ── */
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* HERO */
     .hero {
       min-height: 75vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding-top: 64px;
     }
+
     .hero-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 5rem 4rem 5rem 6rem;
     }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 4vw, 4.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 42ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
     .hero-visual {
       position: relative;
+      background: var(--ink);
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .hero-badges {
       position: absolute;
       bottom: 1.5rem;
@@ -88,6 +143,7 @@
       display: flex;
       gap: 0.6rem;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -101,88 +157,12 @@
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255,255,255,0.15);
     }
-    .hero-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.5rem;
+
+    /* SECTIONS */
+    section {
+      padding: 6rem;
     }
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 4vw, 4.2rem);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin-bottom: 2rem;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--red);
-    }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--mid);
-      max-width: 42ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--ink);
-      color: #fff;
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.85rem 2rem;
-      transition: background 0.2s;
-    }
-    .hero-cta:hover { background: var(--red); }
-    .hero-visual {
-      position: relative;
-      background: var(--ink);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-    .hero-diagram {
-      position: relative;
-      z-index: 1;
-      width: 340px;
-    }
-    /* animated SVG diagram */
-    .node {
-      animation: pulse 3s ease-in-out infinite;
-    }
-    .node:nth-child(2) { animation-delay: 0.5s; }
-    .node:nth-child(3) { animation-delay: 1s; }
-    .node:nth-child(4) { animation-delay: 1.5s; }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 1; }
-    }
-    .edge {
-      animation: dash 4s linear infinite;
-    }
-    @keyframes dash {
-      to { stroke-dashoffset: -48; }
-    }
-    /* ── SECTIONS ── */
-    section { padding: 6rem 6rem; }
+
     .section-label {
       font-size: 0.72rem;
       font-weight: 500;
@@ -191,52 +171,20 @@
       color: var(--red);
       margin-bottom: 1rem;
     }
+
     .section-title {
       font-family: var(--serif);
       font-size: clamp(2rem, 3vw, 2.8rem);
       line-height: 1.2;
       margin-bottom: 3.5rem;
     }
-    /* ── ABOUT ── */
-    #about { background: #fff; border-top: 1px solid var(--faint); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .about-body {
-      font-size: 1.05rem;
-      color: var(--mid);
-      line-height: 1.8;
-    }
-    .about-body p + p { margin-top: 1.2rem; }
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .stat-card {
-      border: 1px solid var(--faint);
-      padding: 1.75rem;
+
+    /* RESEARCH */
+    #research {
       background: var(--bg);
+      border-top: 1px solid var(--faint);
     }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.4rem;
-      color: var(--red);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--mid);
-    }
-    /* ── RESEARCH ── */
-    #research { background: var(--bg); border-top: 1px solid var(--faint); }
+
     .research-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -244,37 +192,50 @@
       background: var(--faint);
       border: 1.5px solid var(--faint);
     }
+
     .research-item {
       background: var(--bg);
       padding: 2.2rem;
       transition: background 0.2s;
     }
-    .research-item:hover { background: var(--red-light); }
+
+    .research-item:hover {
+      background: var(--red-light);
+    }
+
     .research-icon {
       width: 36px;
       height: 36px;
       margin-bottom: 1.2rem;
       color: var(--red);
     }
+
     .research-item h3 {
       font-family: var(--serif);
       font-size: 1.15rem;
       line-height: 1.3;
       margin-bottom: 0.8rem;
     }
+
     .research-item p {
       font-size: 0.9rem;
       color: var(--mid);
       line-height: 1.65;
     }
-    /* ── PI ── */
-    #people { background: #fff; border-top: 1px solid var(--faint); }
+
+    /* PEOPLE */
+    #people {
+      background: #fff;
+      border-top: 1px solid var(--faint);
+    }
+
     .pi-card {
       display: grid;
       grid-template-columns: 280px 1fr;
       gap: 4rem;
       align-items: start;
     }
+
     .pi-avatar {
       width: 120px;
       height: 120px;
@@ -283,22 +244,7 @@
       overflow: hidden;
       flex-shrink: 0;
     }
-    .pi-avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--serif);
-      font-size: 5rem;
-      color: var(--mid);
-      background: linear-gradient(135deg, var(--faint) 0%, #ddd8d0 100%);
-    }
-    .pi-name {
-      font-family: var(--serif);
-      font-size: 2rem;
-      margin-bottom: 0.3rem;
-    }
+
     .pi-title {
       font-size: 0.85rem;
       font-weight: 500;
@@ -307,16 +253,19 @@
       color: var(--red);
       margin-bottom: 1.5rem;
     }
+
     .pi-bio {
       font-size: 1rem;
       color: var(--mid);
       line-height: 1.8;
       margin-bottom: 2rem;
     }
+
     .pi-edu {
       border-top: 1px solid var(--faint);
       padding-top: 1.5rem;
     }
+
     .pi-edu h4 {
       font-size: 0.72rem;
       font-weight: 500;
@@ -325,11 +274,13 @@
       color: var(--mid);
       margin-bottom: 1rem;
     }
+
     .edu-item {
       display: flex;
       gap: 1rem;
       margin-bottom: 0.9rem;
     }
+
     .edu-year {
       font-size: 0.82rem;
       font-weight: 500;
@@ -337,10 +288,12 @@
       white-space: nowrap;
       min-width: 40px;
     }
+
     .edu-detail {
       font-size: 0.9rem;
       color: var(--mid);
     }
+
     .pi-contact {
       display: inline-flex;
       align-items: center;
@@ -353,23 +306,163 @@
       margin-top: 1rem;
       transition: color 0.2s, border-color 0.2s;
     }
-    .pi-contact:hover { color: var(--red); border-color: var(--red); }
-    /* ── HIRING ── */
-    #join { background: var(--ink); color: #fff; border-top: 1px solid #333; }
-    #join .section-label { color: #ba5555; }
-    #join .section-title { color: #fff; }
+
+    .pi-contact:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    /* STUDENTS */
+    .students-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .student-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid var(--faint);
+      padding: 1.75rem;
+    }
+
+    .student-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--red-light);
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .student-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .student-degree {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .student-year {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-bottom: 0.75rem;
+    }
+
+    .student-bio {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+
+    .student-edu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .student-edu span {
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    .student-email {
+      font-size: 0.82rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .student-email:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    /* ALUMNI */
+    .alumni-list {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--faint);
+    }
+
+    .alumni-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--faint);
+      flex-wrap: wrap;
+    }
+
+    .alumni-item:last-child {
+      border-bottom: none;
+    }
+
+    .alumni-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      min-width: 160px;
+    }
+
+    .alumni-role {
+      font-size: 0.88rem;
+      color: var(--mid);
+      flex: 1;
+    }
+
+    .alumni-note {
+      font-size: 0.82rem;
+      color: var(--red);
+    }
+
+    /* JOIN */
+    #join {
+      background: var(--ink);
+      color: #fff;
+      border-top: 1px solid #333;
+    }
+
+    #join .section-label {
+      color: #ba5555;
+    }
+
+    #join .section-title {
+      color: #fff;
+    }
+
     .join-body {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: start;
     }
+
     .join-text {
       font-size: 1.05rem;
       color: rgba(255,255,255,0.65);
       line-height: 1.8;
     }
-    .join-text p + p { margin-top: 1rem; }
+
+    .join-text p + p {
+      margin-top: 1rem;
+    }
+
     .join-cta {
       display: inline-flex;
       align-items: center;
@@ -385,20 +478,27 @@
       margin-top: 2rem;
       transition: opacity 0.2s;
     }
-    .join-cta:hover { opacity: 0.85; }
+
+    .join-cta:hover {
+      opacity: 0.85;
+    }
+
     .join-qualifications {
       border: 1px solid rgba(255,255,255,0.1);
       padding: 2.5rem;
     }
+
     .join-qualifications h3 {
       font-family: var(--serif);
       font-size: 1.3rem;
       margin-bottom: 1.5rem;
       color: rgba(255,255,255,0.9);
     }
+
     .qual-list {
       list-style: none;
     }
+
     .qual-list li {
       display: flex;
       align-items: baseline;
@@ -408,13 +508,15 @@
       padding: 0.6rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
+
     .qual-list li::before {
       content: '→';
       color: var(--red);
       font-size: 0.85rem;
       flex-shrink: 0;
     }
-    /* ── FOOTER ── */
+
+    /* FOOTER */
     footer {
       background: var(--ink);
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -423,237 +525,260 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .footer-logo {
       font-family: var(--serif);
       font-size: 1rem;
       color: rgba(255,255,255,0.4);
     }
+
     .footer-address {
       font-size: 0.82rem;
       color: rgba(255,255,255,0.3);
       text-align: right;
       line-height: 1.6;
     }
-    /* ── STUDENTS ── */
-    .students-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-    .student-card {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid var(--faint);
-      padding: 1.75rem;
-    }
-    .student-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: var(--red-light);
-      color: var(--red);
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .student-name {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      margin-bottom: 0.2rem;
-    }
-    .student-degree {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--red);
-    }
-    .student-year {
-      font-size: 0.8rem;
-      color: var(--mid);
-      margin-bottom: 0.75rem;
-    }
-    .student-bio {
-      font-size: 0.9rem;
-      color: var(--mid);
-      line-height: 1.65;
-      margin-bottom: 0.75rem;
-    }
-    .student-edu {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      margin-bottom: 0.75rem;
-    }
-    .student-edu span {
-      font-size: 0.8rem;
-      color: var(--mid);
-    }
-    .student-email {
-      font-size: 0.82rem;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--faint);
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .student-email:hover { color: var(--red); border-color: var(--red); }
-    /* ── ALUMNI ── */
-    .alumni-list {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--faint);
-    }
-    .alumni-item {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      padding: 1.1rem 1.5rem;
-      border-bottom: 1px solid var(--faint);
-      flex-wrap: wrap;
-    }
-    .alumni-item:last-child { border-bottom: none; }
-    .alumni-name {
-      font-family: var(--serif);
-      font-size: 1rem;
-      min-width: 160px;
-    }
-    .alumni-role {
-      font-size: 0.88rem;
-      color: var(--mid);
-      flex: 1;
-    }
-    .alumni-note {
-      font-size: 0.82rem;
-      color: var(--red);
-    }
-    /* ── ANIMATIONS ── */
+
+    /* ANIMATIONS */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     .fade-in.visible {
       opacity: 1;
       transform: none;
     }
-    /* ── RESPONSIVE ── */
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 0 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-text { padding: 5rem 2rem 3rem; }
-      .hero-visual { min-height: 280px; }
-      section { padding: 4rem 2rem; }
-      .about-grid,
+      nav {
+        padding: 0 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-text {
+        padding: 5rem 2rem 3rem;
+      }
+
+      .hero-visual {
+        min-height: 280px;
+      }
+
+      section {
+        padding: 4rem 2rem;
+      }
+
       .pi-card,
       .join-body,
-      .students-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .research-grid { grid-template-columns: 1fr 1fr; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-      .footer-address { text-align: center; }
+      .students-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .footer-address {
+        text-align: center;
+      }
     }
+
     @media (max-width: 600px) {
-      .research-grid { grid-template-columns: 1fr; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="CAMIs.png" alt="CAMIs Lab" style="height:44px;width:auto;max-width:160px;object-fit:contain;display:block;"/>
+      <img
+        src="CAMIs.png"
+        alt="CAMIs Lab"
+        style="height:44px;width:auto;max-width:160px;object-fit:contain;display:block;"
+      />
     </a>
+
     <ul class="nav-links">
       <li><a href="#research">Research</a></li>
       <li><a href="#people">People</a></li>
       <li><a href="#join">Join</a></li>
     </ul>
   </nav>
+
   <!-- HERO -->
   <div class="hero">
+
     <div class="hero-text">
       <p class="hero-label">University of Georgia · Athens, GA</p>
-      <img src="CAMIs.png" alt="CAMIs Lab Logo" style="height:80px;width:auto;max-width:260px;object-fit:contain;margin-bottom:1.5rem;"/>
+
+      <img
+        src="CAMIs.png"
+        alt="CAMIs Lab Logo"
+        style="height:80px;width:auto;max-width:260px;object-fit:contain;margin-bottom:1.5rem;"
+      />
+
       <h1 class="hero-title">
-        Cooperative<br/>
-        <em>Automated</em><br/>
-        Mobility<br/>
+        Cooperative<br />
+        <em>Automated</em><br />
+        Mobility<br />
         Innovations
       </h1>
+
       <p class="hero-desc">
-        Advancing knowledge and technologies that enhance transportation safety, sustainability, and efficiency — bridging data, theory, and real-world practice.
+        Advancing knowledge and technologies that enhance transportation safety,
+        sustainability, and efficiency — bridging data, theory, and real-world practice.
       </p>
     </div>
+
     <div class="hero-visual">
-      <img src="AV.JPG" alt="CAMIs Lab autonomous vehicle" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;"/>
+
+      <img
+        src="AV.JPG"
+        alt="CAMIs Lab autonomous vehicle"
+        style="width:100%;height:100%;object-fit:cover;object-position:center 60%;"
+      />
+
       <div class="hero-badges">
+
         <span class="hero-badge">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M4 7l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/>
+            <path
+              d="M4 7l2 2 4-4"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
           Fully Automated
         </span>
+
         <span class="hero-badge">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v4l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M7 2v4l2.5 1.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
           100% Electric
         </span>
+
       </div>
     </div>
+
   </div>
+
   <!-- RESEARCH -->
   <section id="research">
+
     <div class="fade-in">
       <p class="section-label">Research</p>
       <h2 class="section-title">Research Projects</h2>
     </div>
+
     <div class="research-grid fade-in">
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="18" cy="18" r="8"/><circle cx="18" cy="18" r="14" stroke-dasharray="4 3"/>
+          <circle cx="18" cy="18" r="8"/>
+          <circle cx="18" cy="18" r="14" stroke-dasharray="4 3"/>
           <path d="M18 4v4M18 28v4M4 18h4M28 18h4"/>
         </svg>
-        <h3>Probing LLMs for Autonomous Driving</h3>
-        <p>Evaluating the decision-making behaviors of large language models when applied to autonomous vehicle control and navigation scenarios.</p>
+
+        <h3>Research Project 01</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="6" y="14" width="24" height="12" rx="2"/>
           <path d="M10 14v-2a8 8 0 0116 0v2"/>
           <circle cx="18" cy="20" r="2" fill="currentColor"/>
         </svg>
-        <h3>LLM-Assisted AV Recovery from Immobilization</h3>
-        <p>Developing language-model-guided recovery strategies that help autonomous vehicles escape stuck or immobilized situations on public roads.</p>
+
+        <h3>Research Project 02</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M6 28l6-8 6 5 6-10 6 4"/>
           <circle cx="30" cy="10" r="3"/>
           <path d="M27 10H6"/>
         </svg>
-        <h3>Wireless Charging Network Optimization</h3>
-        <p>Mixed wireless charging infrastructure planning for electric bus fleets, balancing cost, coverage, and grid demand.</p>
+
+        <h3>Research Project 03</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="4" y="8" width="28" height="20" rx="2"/>
           <path d="M12 8v20M20 8v20M4 18h28"/>
         </svg>
-        <h3>LiDAR & Camera Analytics for Traffic Safety</h3>
-        <p>Fusing LiDAR point clouds with camera imagery to identify high-risk zones, near-miss events, and vulnerable road user behaviors.</p>
+
+        <h3>Research Project 04</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M8 28L4 24l4-4M28 28l4-4-4-4"/>
           <path d="M18 8v20M8 20h20"/>
           <rect x="14" y="12" width="8" height="8" rx="1"/>
         </svg>
-        <h3>AV Interaction with Traffic Control</h3>
-        <p>Studying how autonomous vehicles interpret and respond to traffic signs and signals, and the downstream effects on overall traffic flow.</p>
+
+        <h3>Research Project 05</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="4" y="22" width="28" height="6" rx="1"/>
@@ -662,150 +787,357 @@
           <circle cx="18" cy="8" r="3"/>
           <circle cx="26" cy="14" r="3"/>
         </svg>
-        <h3>Full-scale & Reduced-scale CAV Testbeds</h3>
-        <p>Building real-world and miniaturized testbeds to validate cooperative driving algorithms before public road deployment.</p>
+
+        <h3>Research Project 06</h3>
+
+        <p>
+          Brief description of the research project, its objectives, methods,
+          and potential transportation applications.
+        </p>
       </div>
+
     </div>
   </section>
-  <!-- PEOPLE / PI -->
+
+  <!-- PEOPLE -->
   <section id="people">
+
     <div class="fade-in">
       <p class="section-label">Principal Investigator</p>
       <h2 class="section-title">Qianwen (Cami) Li, Ph.D.</h2>
     </div>
+
     <div class="pi-card fade-in">
+
       <div class="pi-avatar">
-        <img src="QL.jpg" alt="Dr. Qianwen Li" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
+        <img
+          src="QL.jpg"
+          alt="Dr. Qianwen Li"
+          style="width:100%;height:100%;object-fit:cover;object-position:top;"
+        />
       </div>
+
       <div>
-        <p class="pi-title">Assistant Professor · ECAM, University of Georgia</p>
-        <p class="pi-bio">
-          Dr. Li is an Assistant Professor at the School of Environmental, Civil, Agricultural and Mechanical Engineering (ECAM) at the University of Georgia. Her research interests include Connected, Automated, Electric, and Shared Mobility; AI Applications in Transportation; Smart Infrastructure Systems; and Traffic Flow Theory.
+
+        <p class="pi-title">
+          Assistant Professor · ECAM, University of Georgia
         </p>
+
+        <p class="pi-bio">
+          Dr. Li is an Assistant Professor at the School of Environmental,
+          Civil, Agricultural and Mechanical Engineering (ECAM) at the
+          University of Georgia. Her research interests include Connected,
+          Automated, Electric, and Shared Mobility; AI Applications in
+          Transportation; Smart Infrastructure Systems; and Traffic Flow Theory.
+        </p>
+
         <div class="pi-edu">
+
           <h4>Education</h4>
+
           <div class="edu-item">
             <span class="edu-year">2022</span>
-            <span class="edu-detail">Ph.D. in Civil Engineering (Transportation) — University of South Florida<br/><em style="font-size:0.82rem;color:var(--red)">Milton Pikarsky Memorial Award — Best Doctoral Dissertation</em></span>
+
+            <span class="edu-detail">
+              Ph.D. in Civil Engineering (Transportation) — University of South Florida
+              <br />
+              <em style="font-size:0.82rem;color:var(--red)">
+                Milton Pikarsky Memorial Award — Best Doctoral Dissertation
+              </em>
+            </span>
           </div>
+
           <div class="edu-item">
             <span class="edu-year">2020</span>
-            <span class="edu-detail">M.S. in Civil Engineering (Transportation) — University of South Florida<br/><em style="font-size:0.82rem;color:var(--red)">Neville A. Parker Award — Best Master's Project</em></span>
+
+            <span class="edu-detail">
+              M.S. in Civil Engineering (Transportation) — University of South Florida
+              <br />
+              <em style="font-size:0.82rem;color:var(--red)">
+                Neville A. Parker Award — Best Master's Project
+              </em>
+            </span>
           </div>
+
           <div class="edu-item">
             <span class="edu-year">2018</span>
-            <span class="edu-detail">B.S. in Computer Science & Technology — Shandong University</span>
+
+            <span class="edu-detail">
+              B.S. in Computer Science & Technology — Shandong University
+            </span>
           </div>
+
         </div>
+
         <a href="mailto:Cami.Li@uga.edu" class="pi-contact">
           Cami.Li@uga.edu
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M2 7h10M7 2l5 5-5 5"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </a>
+
       </div>
     </div>
+
     <!-- CURRENT STUDENTS -->
+
     <div class="fade-in" style="margin-top:5rem;">
       <p class="section-label">Current Lab Members</p>
-      <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2.5rem;">PhD Students & Interns</h2>
+      <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2.5rem;">
+        PhD Students & Interns
+      </h2>
     </div>
+
     <div class="students-grid fade-in">
+
       <div class="student-card">
-        <div class="student-avatar" style="overflow:hidden;">
-          <img src="ZB.jpg" alt="Zhipeng Bao" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
+
+        <div class="student-avatar">
+          <img
+            src="ZB.jpg"
+            alt="Zhipeng Bao"
+            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+          />
         </div>
+
         <div class="student-info">
+
           <h3 class="student-name">Zhipeng Bao</h3>
-          <p class="student-degree">Ph.D. · Mechanical Engineering</p>
+
+          <p class="student-degree">
+            Ph.D. · Mechanical Engineering
+          </p>
+
           <p class="student-year">Joined 2024</p>
-          <p class="student-bio">Research interests: trajectory prediction &amp; planning, 3D computer vision, electronics, and vehicle control.</p>
+
+          <p class="student-bio">
+            Research interests: trajectory prediction & planning,
+            3D computer vision, electronics, and vehicle control.
+          </p>
+
           <div class="student-edu">
             <span>M.S. Vehicle Engineering — Jilin University, 2022</span>
             <span>B.E. Automotive Engineering (Honors) — Wuhan Univ. of Technology, 2019</span>
           </div>
-          <a href="mailto:zb28097@uga.edu" class="student-email">zb28097@uga.edu</a>
+
+          <a href="mailto:zb28097@uga.edu" class="student-email">
+            zb28097@uga.edu
+          </a>
+
         </div>
       </div>
+
       <div class="student-card">
-        <div class="student-avatar" style="overflow:hidden;">
-          <img src="WZ.jpg" alt="Wenjie Zhao" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
+
+        <div class="student-avatar">
+          <img
+            src="WZ.jpg"
+            alt="Wenjie Zhao"
+            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+          />
         </div>
+
         <div class="student-info">
+
           <h3 class="student-name">Wenjie Zhao</h3>
-          <p class="student-degree">Ph.D. · Civil Engineering</p>
+
+          <p class="student-degree">
+            Ph.D. · Civil Engineering
+          </p>
+
           <p class="student-year">Joined 2024</p>
-          <p class="student-bio">Research interests: traffic flow theory, transportation economics, and shared mobility systems.</p>
+
+          <p class="student-bio">
+            Research interests: traffic flow theory, transportation economics,
+            and shared mobility systems.
+          </p>
+
           <div class="student-edu">
             <span>M.S. Systems Science — Beijing Jiaotong University, 2024</span>
             <span>B.S. Applied Mathematics — Beijing Jiaotong University, 2021</span>
           </div>
-          <a href="mailto:Wenjie.Zhao1@uga.edu" class="student-email">Wenjie.Zhao1@uga.edu</a>
+
+          <a href="mailto:Wenjie.Zhao1@uga.edu" class="student-email">
+            Wenjie.Zhao1@uga.edu
+          </a>
+
         </div>
       </div>
+
       <div class="student-card">
-        <div class="student-avatar" style="overflow:hidden;">
-          <img src="YL.png" alt="Yiping Li" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
+
+        <div class="student-avatar">
+          <img
+            src="YL.png"
+            alt="Yiping Li"
+            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+          />
         </div>
+
         <div class="student-info">
+
           <h3 class="student-name">Yiping Li</h3>
-          <p class="student-degree">Ph.D. · Civil Engineering</p>
+
+          <p class="student-degree">
+            Ph.D. · Civil Engineering
+          </p>
+
           <p class="student-year">Joined 2025</p>
-          <p class="student-bio">Research interests: autonomous driving, cooperative perception, and AI in transportation.</p>
+
+          <p class="student-bio">
+            Research interests: autonomous driving, cooperative perception,
+            and AI in transportation.
+          </p>
+
           <div class="student-edu">
             <span>B.E. Software Engineering — Shandong University, 2025</span>
           </div>
-          <a href="mailto:Yiping.Li@uga.edu" class="student-email">Yiping.Li@uga.edu</a>
+
+          <a href="mailto:Yiping.Li@uga.edu" class="student-email">
+            Yiping.Li@uga.edu
+          </a>
+
         </div>
       </div>
+
       <div class="student-card">
+
         <div class="student-avatar">ZE</div>
+
         <div class="student-info">
+
           <h3 class="student-name">Zoe Eckrich</h3>
-          <p class="student-degree">Undergraduate Intern</p>
-          <p class="student-year">Summer 2026</p>
-          <p class="student-bio">Mechanical Engineering, Clemson University.</p>
+
+          <p class="student-degree">
+            Undergraduate Intern
+          </p>
+
+          <p class="student-year">
+            Summer 2026
+          </p>
+
+          <p class="student-bio">
+            Mechanical Engineering, Clemson University.
+          </p>
+
         </div>
       </div>
+
     </div>
+
     <!-- FORMER MEMBERS -->
+
     <div class="fade-in" style="margin-top:4rem;">
+
       <p class="section-label">Alumni</p>
-      <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2rem;">Former Lab Members</h2>
+
+      <h2
+        class="section-title"
+        style="font-size:1.8rem;margin-bottom:2rem;"
+      >
+        Former Lab Members
+      </h2>
+
       <div class="alumni-list">
+
         <div class="alumni-item">
           <span class="alumni-name">Mac McFarland</span>
-          <span class="alumni-role">Young Dawgs Student · North Oconee High School · Fall 2025</span>
-          <span class="alumni-note">License Plate Recognition System — <strong>First Prize</strong></span>
+
+          <span class="alumni-role">
+            Young Dawgs Student · North Oconee High School · Fall 2025
+          </span>
+
+          <span class="alumni-note">
+            License Plate Recognition System — <strong>First Prize</strong>
+          </span>
         </div>
+
         <div class="alumni-item">
           <span class="alumni-name">Myviord Djaja</span>
-          <span class="alumni-role">Undergraduate · Computer Systems Engineering, UGA · Spring 2026</span>
+
+          <span class="alumni-role">
+            Undergraduate · Computer Systems Engineering, UGA · Spring 2026
+          </span>
         </div>
+
         <div class="alumni-item">
           <span class="alumni-name">Baodian Zhang</span>
-          <span class="alumni-role">Undergraduate · Mechanical Engineering, UGA · Spring 2026</span>
+
+          <span class="alumni-role">
+            Undergraduate · Mechanical Engineering, UGA · Spring 2026
+          </span>
         </div>
+
       </div>
     </div>
+
   </section>
+
   <!-- JOIN -->
   <section id="join">
+
     <div class="fade-in">
-      <p class="section-label">Opportunities</p>
-      <h2 class="section-title">Join the Lab</h2>
+
+      <p class="section-label">
+        Opportunities
+      </p>
+
+      <h2 class="section-title">
+        Join the Lab
+      </h2>
+
     </div>
+
     <div class="join-body fade-in">
-      <div>
-        <p class="join-text">
-          <p>The CAMIs Lab is actively recruiting highly motivated Ph.D. students to work on the next generation of connected and automated transportation systems.</p>
-          <p>We are a collaborative, interdisciplinary group committed to rigorous science and meaningful real-world impact. Students will have access to full-scale and reduced-scale CAV testbeds, industry partnerships, and a supportive mentorship environment.</p>
+
+      <div class="join-text">
+
+        <p>
+          The CAMIs Lab is actively recruiting highly motivated Ph.D. students
+          to work on the next generation of connected and automated
+          transportation systems.
         </p>
-        <a href="mailto:Cami.Li@uga.edu?subject=PhD Inquiry – CAMIs Lab" class="join-cta">
+
+        <p>
+          We are a collaborative, interdisciplinary group committed to rigorous
+          science and meaningful real-world impact. Students will have access to
+          full-scale and reduced-scale CAV testbeds, industry partnerships, and
+          a supportive mentorship environment.
+        </p>
+
+        <a
+          href="mailto:Cami.Li@uga.edu?subject=PhD Inquiry – CAMIs Lab"
+          class="join-cta"
+        >
           Send Your Application
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M2 7h10M7 2l5 5-5 5"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
         </a>
+
       </div>
+
       <div class="join-qualifications">
-        <h3>We're especially interested in candidates with backgrounds in:</h3>
+
+        <h3>
+          We're especially interested in candidates with backgrounds in:
+        </h3>
+
         <ul class="qual-list">
           <li>Machine learning & deep learning</li>
           <li>Optimization theory & methods</li>
@@ -813,27 +1145,55 @@
           <li>Computer vision & sensor fusion</li>
           <li>Transportation engineering</li>
         </ul>
-        <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4)">
-          Please include your CV, class ranking, and undergraduate/graduate transcripts in your inquiry.
+
+        <p
+          style="
+            margin-top:1.5rem;
+            font-size:0.85rem;
+            color:rgba(255,255,255,0.4);
+          "
+        >
+          Please include your CV, class ranking, and undergraduate/graduate
+          transcripts in your inquiry.
         </p>
+
       </div>
+
     </div>
+
   </section>
+
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">CAMIs Lab @ UGA</div>
+
+    <div class="footer-logo">
+      CAMIs Lab @ UGA
+    </div>
+
     <div class="footer-address">
-      Boyd Research and Education Center, Room 716B<br/>
+      Boyd Research and Education Center, Room 716B
+      <br />
       200 D. W. Brooks Drive, Athens, GA 30602
     </div>
+
   </footer>
+
   <script>
-    // Fade-in on scroll
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        }),
       { threshold: 0.1 }
     );
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    document
+      .querySelectorAll('.fade-in')
+      .forEach((element) => observer.observe(element));
   </script>
+
 </body>
 </html>
+```
