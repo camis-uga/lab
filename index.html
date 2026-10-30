@@ -606,8 +606,79 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
-</head>
+    
+    .research-project-link {
+  position: relative;
+  display: block;
+  min-height: 280px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  isolation: isolate;
+}
+    
+    /* Background image */
+    .infrastructure-project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("AV.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.55;
+      z-index: -2;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Dark overlay */
+    .infrastructure-project::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(15, 20, 24, 0.2),
+        rgba(15, 20, 24, 0.85)
+      );
+      z-index: -1;
+    }
+    
+    .research-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 215px;
+    }
+    
+    .infrastructure-project h3 {
+      color: #fff;
+      font-size: 1.35rem;
+    }
+    
+    .infrastructure-project p {
+      color: rgba(255, 255, 255, 0.88);
+    }
+    
+    .project-link-text {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    
+    .infrastructure-project:hover {
+      background: transparent;
+    }
+    
+    .infrastructure-project:hover::before {
+      opacity: 0.7;
+      transform: scale(1.04);
+    }
+      </style>
+    </head>
 
 <body>
 
@@ -705,20 +776,24 @@
 
     <div class="research-grid fade-in">
 
-      <div class="research-item">
-        <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="18" cy="18" r="8"/>
-          <circle cx="18" cy="18" r="14" stroke-dasharray="4 3"/>
-          <path d="M18 4v4M18 28v4M4 18h4M28 18h4"/>
-        </svg>
+      <a
+  href="https://github.com/UGA-MOBILITY-LAB/rav-demo"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="research-item research-project-link infrastructure-project"
+>
+  <div class="research-content">
+    <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
 
-        <h3>Research Project 01</h3>
+    <p>
+      Evaluating roadway infrastructure from the automated-driving perspective
+      to determine how reliably automated driving systems can operate across
+      different road classes, infrastructure features, and roadway conditions.
+    </p>
 
-        <p>
-          Brief description of the research project, its objectives, methods,
-          and potential transportation applications.
-        </p>
-      </div>
+    <span class="project-link-text">View Project on GitHub →</span>
+  </div>
+</a>
 
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
