@@ -622,7 +622,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("InfrasRead.png");
+      background-image: var(--project-image);
       background-size: cover;
       background-position: center;
       opacity: 0.55;
@@ -781,6 +781,7 @@
   target="_blank"
   rel="noopener noreferrer"
   class="research-item research-project-link infrastructure-project"
+  style="--project-image: url('InfrasRead.png');"
 >
   <div class="research-content">
     <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
@@ -795,20 +796,25 @@
   </div>
 </a>
 
-      <div class="research-item">
-        <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="6" y="14" width="24" height="12" rx="2"/>
-          <path d="M10 14v-2a8 8 0 0116 0v2"/>
-          <circle cx="18" cy="20" r="2" fill="currentColor"/>
-        </svg>
+      <a
+  href="https://github.com/wjoooo-oo/crash-localization-pipeline"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="research-item research-project-link infrastructure-project"
+  style="--project-image: url('crashalign.png');"
+>
+  <div class="research-content">
+    <h3>CrashAlign: End-to-End Crash Detection and Understanding</h3>
 
-        <h3>Research Project 02</h3>
+    <p>
+      An end-to-end framework for recognizing crashes in traffic videos,
+      locating when and where they occur, and interpreting what happened
+      and why.
+    </p>
 
-        <p>
-          Brief description of the research project, its objectives, methods,
-          and potential transportation applications.
-        </p>
-      </div>
+    <span class="project-link-text">View Project on GitHub →</span>
+  </div>
+</a>
 
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
