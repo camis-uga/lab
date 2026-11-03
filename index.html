@@ -246,43 +246,43 @@
     }
 
     .pi-title {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .pi-bio {
-      font-size: 1rem;
+      font-size: 0.92rem;
       color: var(--mid);
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
     }
 
     .pi-edu {
       border-top: 1px solid var(--faint);
-      padding-top: 1.5rem;
+      padding-top: 1.4rem;
     }
 
     .pi-edu h4 {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--mid);
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .edu-item {
       display: flex;
       gap: 1rem;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.8rem;
     }
 
     .edu-year {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: var(--red);
       white-space: nowrap;
@@ -290,7 +290,7 @@
     }
 
     .edu-detail {
-      font-size: 0.9rem;
+      font-size: 0.84rem;
       color: var(--mid);
     }
 
@@ -298,12 +298,12 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid var(--ink);
       padding-bottom: 1px;
-      margin-top: 1rem;
+      margin-top: 0.9rem;
       transition: color 0.2s, border-color 0.2s;
     }
 
@@ -611,18 +611,17 @@
         grid-template-columns: 1fr;
       }
     }
-    
+
     .research-project-link {
-  position: relative;
-  display: block;
-  min-height: 280px;
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  isolation: isolate;
-}
-    
-    /* Background image */
+      position: relative;
+      display: block;
+      min-height: 280px;
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      isolation: isolate;
+    }
+
     .infrastructure-project::before {
       content: "";
       position: absolute;
@@ -634,8 +633,7 @@
       z-index: -2;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
-    
-    /* Dark overlay */
+
     .infrastructure-project::after {
       content: "";
       position: absolute;
@@ -647,7 +645,7 @@
       );
       z-index: -1;
     }
-    
+
     .research-content {
       position: relative;
       display: flex;
@@ -655,16 +653,16 @@
       justify-content: flex-end;
       min-height: 215px;
     }
-    
+
     .infrastructure-project h3 {
       color: #fff;
       font-size: 1.35rem;
     }
-    
+
     .infrastructure-project p {
       color: rgba(255, 255, 255, 0.88);
     }
-    
+
     .project-link-text {
       margin-top: 1rem;
       color: #fff;
@@ -673,17 +671,17 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-    
+
     .infrastructure-project:hover {
       background: transparent;
     }
-    
+
     .infrastructure-project:hover::before {
       opacity: 0.7;
       transform: scale(1.04);
     }
-      </style>
-    </head>
+  </style>
+</head>
 
 <body>
 
@@ -730,7 +728,6 @@
     </div>
 
     <div class="hero-visual">
-
       <img
         src="AV.JPG"
         alt="CAMIs Lab autonomous vehicle"
@@ -738,34 +735,21 @@
       />
 
       <div class="hero-badges">
-
         <span class="hero-badge">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/>
-            <path
-              d="M4 7l2 2 4-4"
-              stroke="currentColor"
-              stroke-width="1.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+            <path d="M4 7l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           Fully Automated
         </span>
 
         <span class="hero-badge">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M7 2v4l2.5 1.5"
-              stroke="currentColor"
-              stroke-width="1.2"
-              stroke-linecap="round"
-            />
+            <path d="M7 2v4l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
             <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
           </svg>
           100% Electric
         </span>
-
       </div>
     </div>
 
@@ -782,107 +766,97 @@
     <div class="research-grid fade-in">
 
       <a
-  href="https://github.com/UGA-MOBILITY-LAB/rav-demo"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="research-item research-project-link infrastructure-project"
-  style="--project-image: url('InfrasRead.png');"
->
-  <div class="research-content">
-    <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
-
-    <p>
-      Evaluating roadway infrastructure from the automated-driving perspective
-      to determine how reliably automated driving systems can operate across
-      different road classes, infrastructure features, and roadway conditions.
-    </p>
-
-    <span class="project-link-text">View Project on GitHub →</span>
-  </div>
-</a>
+        href="https://github.com/UGA-MOBILITY-LAB/rav-demo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="research-item research-project-link infrastructure-project"
+        style="--project-image: url('InfrasRead.png');"
+      >
+        <div class="research-content">
+          <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
+          <p>
+            Evaluating roadway infrastructure from the automated-driving perspective
+            to determine how reliably automated driving systems can operate across
+            different road classes, infrastructure features, and roadway conditions.
+          </p>
+          <span class="project-link-text">View Project on GitHub →</span>
+        </div>
+      </a>
 
       <a
-  href="https://github.com/wjoooo-oo/crash-localization-pipeline"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="research-item research-project-link infrastructure-project"
-  style="--project-image: url('crashalign.png');"
->
-  <div class="research-content">
-    <h3>CrashAlign: End-to-End Crash Detection and Understanding</h3>
-
-    <p>
-      An end-to-end framework for recognizing crashes in traffic videos,
-      locating when and where they occur, and interpreting what happened
-      and why.
-    </p>
-
-    <span class="project-link-text">View Project on GitHub →</span>
-  </div>
-</a>
+        href="https://github.com/wjoooo-oo/crash-localization-pipeline"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="research-item research-project-link infrastructure-project"
+        style="--project-image: url('crashalign.png');"
+      >
+        <div class="research-content">
+          <h3>CrashAlign: End-to-End Crash Detection and Understanding</h3>
+          <p>
+            An end-to-end framework for recognizing crashes in traffic videos,
+            locating when and where they occur, and interpreting what happened
+            and why.
+          </p>
+          <span class="project-link-text">View Project on GitHub →</span>
+        </div>
+      </a>
 
       <a
-  href="https://github.com/camis-uga/AnchorReasoning"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="research-item research-project-link infrastructure-project"
-  style="--project-image: url('anchorreasoning.jpg');"
->
-  <div class="research-content">
-    <h3>AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving</h3>
-
-    <p>
-      A visually grounded chain-of-thought dataset built on WOD-E2E, with
-      416K frames and 395K decision-critical elements, that teaches
-      vision-language driving models to link what they see to why they act
-      and how they plan.
-    </p>
-
-    <span class="project-link-text">View Project on GitHub →</span>
-  </div>
-</a>
+        href="https://github.com/camis-uga/AnchorReasoning"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="research-item research-project-link infrastructure-project"
+        style="--project-image: url('anchorreasoning.jpg');"
+      >
+        <div class="research-content">
+          <h3>AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving</h3>
+          <p>
+            A visually grounded chain-of-thought dataset built on WOD-E2E, with
+            416K frames and 395K decision-critical elements, that teaches
+            vision-language driving models to link what they see to why they act
+            and how they plan.
+          </p>
+          <span class="project-link-text">View Project on GitHub →</span>
+        </div>
+      </a>
 
       <a
-  href="https://github.com/camis-uga/GRIP-Fusion"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="research-item research-project-link infrastructure-project"
-  style="--project-image: url('gripfusion.jpg');"
->
-  <div class="research-content">
-    <h3>GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety</h3>
-
-    <p>
-      Sponsored by GDOT, this project collects a new roadside intersection
-      dataset with LiDAR, camera and traffic-conflict labels, and develops
-      GRIP-Fusion, a one-LiDAR + one-camera 3D detector that achieves
-      state-of-the-art results on three public benchmarks.
-    </p>
-
-    <span class="project-link-text">View Project on GitHub →</span>
-  </div>
-</a>
+        href="https://github.com/camis-uga/GRIP-Fusion"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="research-item research-project-link infrastructure-project"
+        style="--project-image: url('gripfusion.jpg');"
+      >
+        <div class="research-content">
+          <h3>GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety</h3>
+          <p>
+            Sponsored by GDOT, this project collects a new roadside intersection
+            dataset with LiDAR, camera and traffic-conflict labels, and develops
+            GRIP-Fusion, a one-LiDAR + one-camera 3D detector that achieves
+            state-of-the-art results on three public benchmarks.
+          </p>
+          <span class="project-link-text">View Project on GitHub →</span>
+        </div>
+      </a>
 
       <a
-  href="https://github.com/camis-uga/EgoManeuver"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="research-item research-project-link infrastructure-project"
-  style="--project-image: url('egomaneuver.jpg');"
->
-  <div class="research-content">
-    <h3>EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition</h3>
-
-    <p>
-      A benchmark that unifies seven public driving datasets (86.6K segments,
-      190.8 hours of video) into 16 lateral and 6 longitudinal ego-vehicle
-      actions, with the DenseEgo baseline and an agent that retrieves
-      driving video by maneuver.
-    </p>
-
-    <span class="project-link-text">View Project on GitHub →</span>
-  </div>
-</a>
+        href="https://github.com/camis-uga/EgoManeuver"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="research-item research-project-link infrastructure-project"
+        style="--project-image: url('egomaneuver.jpg');"
+      >
+        <div class="research-content">
+          <h3>EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition</h3>
+          <p>
+            A benchmark that unifies seven public driving datasets (86.6K segments,
+            190.8 hours of video) into 16 lateral and 6 longitudinal ego-vehicle
+            actions, with the DenseEgo baseline and an agent that retrieves
+            driving video by maneuver.
+          </p>
+          <span class="project-link-text">View Project on GitHub →</span>
+        </div>
+      </a>
 
       <div class="research-item">
         <svg class="research-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -922,7 +896,6 @@
       </div>
 
       <div>
-
         <p class="pi-title">
           Assistant Professor · ECAM, University of Georgia
         </p>
@@ -935,39 +908,33 @@
         </p>
 
         <div class="pi-edu">
-
           <h4>Education</h4>
 
           <div class="edu-item">
-
             <span class="edu-detail">
               Ph.D. in Civil Engineering (Transportation) — University of South Florida
               <br />
-              <em style="font-size:0.82rem;color:var(--red)">
+              <em style="font-size:0.78rem;color:var(--red)">
                 Milton Pikarsky Memorial Award — Best Doctoral Dissertation
               </em>
             </span>
           </div>
 
           <div class="edu-item">
-
             <span class="edu-detail">
               M.S. in Civil Engineering (Transportation) — University of South Florida
               <br />
-              <em style="font-size:0.82rem;color:var(--red)">
+              <em style="font-size:0.78rem;color:var(--red)">
                 Neville A. Parker Award — Best Master's Project
               </em>
             </span>
           </div>
 
           <div class="edu-item">
-
-
             <span class="edu-detail">
               B.S. in Computer Science & Technology — Shandong University
             </span>
           </div>
-
         </div>
 
         <a href="mailto:Cami.Li@uga.edu" class="pi-contact">
@@ -983,8 +950,8 @@
             />
           </svg>
         </a>
-
       </div>
+
     </div>
 
     <!-- CURRENT STUDENTS -->
@@ -992,14 +959,13 @@
     <div class="fade-in" style="margin-top:5rem;">
       <p class="section-label">Current Lab Members</p>
       <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2.5rem;">
-        PhD Students & Interns
+        Students
       </h2>
     </div>
 
     <div class="students-grid fade-in">
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="ZB.jpg"
@@ -1009,13 +975,8 @@
         </div>
 
         <div class="student-info">
-
           <h3 class="student-name">Zhipeng Bao</h3>
-
-          <p class="student-degree">
-            Ph.D. · Mechanical Engineering
-          </p>
-
+          <p class="student-degree">Ph.D. · Mechanical Engineering</p>
           <p class="student-year">Joined 2024</p>
 
           <p class="student-bio">
@@ -1036,12 +997,10 @@
           <a href="mailto:zb28097@uga.edu" class="student-email">
             zb28097@uga.edu
           </a>
-
         </div>
       </div>
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="WZ.jpg"
@@ -1051,13 +1010,8 @@
         </div>
 
         <div class="student-info">
-
           <h3 class="student-name">Wenjie Zhao</h3>
-
-          <p class="student-degree">
-            Ph.D. · Civil Engineering
-          </p>
-
+          <p class="student-degree">Ph.D. · Civil Engineering</p>
           <p class="student-year">Joined 2024</p>
 
           <p class="student-bio">
@@ -1073,12 +1027,10 @@
           <a href="mailto:Wenjie.Zhao1@uga.edu" class="student-email">
             Wenjie.Zhao1@uga.edu
           </a>
-
         </div>
       </div>
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="YL.png"
@@ -1088,13 +1040,8 @@
         </div>
 
         <div class="student-info">
-
           <h3 class="student-name">Yiping Li</h3>
-
-          <p class="student-degree">
-            Ph.D. · Civil Engineering
-          </p>
-
+          <p class="student-degree">Ph.D. · Civil Engineering</p>
           <p class="student-year">Joined 2025</p>
 
           <p class="student-bio">
@@ -1109,30 +1056,6 @@
           <a href="mailto:Yiping.Li@uga.edu" class="student-email">
             Yiping.Li@uga.edu
           </a>
-
-        </div>
-      </div>
-
-      <div class="student-card">
-
-        <div class="student-avatar">ZE</div>
-
-        <div class="student-info">
-
-          <h3 class="student-name">Zoe Eckrich</h3>
-
-          <p class="student-degree">
-            Undergraduate Intern
-          </p>
-
-          <p class="student-year">
-            Summer 2026
-          </p>
-
-          <p class="student-bio">
-            Mechanical Engineering, Clemson University.
-          </p>
-
         </div>
       </div>
 
@@ -1141,7 +1064,6 @@
     <!-- FORMER MEMBERS -->
 
     <div class="fade-in" style="margin-top:4rem;">
-
       <p class="section-label">Alumni</p>
 
       <h2
@@ -1154,12 +1076,17 @@
       <div class="alumni-list">
 
         <div class="alumni-item">
-          <span class="alumni-name">Mac McFarland</span>
+          <span class="alumni-name">Zoe Eckrich</span>
+          <span class="alumni-role">
+            Undergraduate Intern · Mechanical Engineering, Clemson University · Summer 2026
+          </span>
+        </div>
 
+        <div class="alumni-item">
+          <span class="alumni-name">Mac McFarland</span>
           <span class="alumni-role">
             Young Dawgs Student · North Oconee High School · Fall 2025
           </span>
-
           <span class="alumni-note">
             License Plate Recognition System — <strong>First Prize</strong>
           </span>
@@ -1167,7 +1094,6 @@
 
         <div class="alumni-item">
           <span class="alumni-name">Myviord Djaja</span>
-
           <span class="alumni-role">
             Undergraduate · Computer Systems Engineering, UGA · Spring 2026
           </span>
@@ -1175,7 +1101,6 @@
 
         <div class="alumni-item">
           <span class="alumni-name">Baodian Zhang</span>
-
           <span class="alumni-role">
             Undergraduate · Mechanical Engineering, UGA · Spring 2026
           </span>
@@ -1190,21 +1115,13 @@
   <section id="join">
 
     <div class="fade-in">
-
-      <p class="section-label">
-        Opportunities
-      </p>
-
-      <h2 class="section-title">
-        Join the Lab
-      </h2>
-
+      <p class="section-label">Opportunities</p>
+      <h2 class="section-title">Join the Lab</h2>
     </div>
 
     <div class="join-body fade-in">
 
       <div class="join-text">
-
         <p>
           The CAMIs Lab is actively recruiting highly motivated Ph.D. students
           to work on the next generation of connected and automated
@@ -1233,13 +1150,10 @@
               stroke-linejoin="round"
             />
           </svg>
-
         </a>
-
       </div>
 
       <div class="join-qualifications">
-
         <h3>
           We're especially interested in candidates with backgrounds in:
         </h3>
@@ -1262,16 +1176,13 @@
           Please include your CV, class ranking, and undergraduate/graduate
           transcripts in your inquiry.
         </p>
-
       </div>
 
     </div>
-
   </section>
 
   <!-- FOOTER -->
   <footer>
-
     <div class="footer-logo">
       CAMIs Lab @ UGA
     </div>
@@ -1281,7 +1192,6 @@
       <br />
       200 D. W. Brooks Drive, Athens, GA 30602
     </div>
-
   </footer>
 
   <script>
