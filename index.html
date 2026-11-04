@@ -291,6 +291,12 @@
       align-items: start;
     }
 
+    .pi-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .pi-avatar {
       width: 120px;
       height: 120px;
@@ -300,13 +306,12 @@
       flex-shrink: 0;
     }
 
-    .pi-title {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.3rem;
+    .pi-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      line-height: 1.25;
+      margin-top: 1rem;
+      margin-bottom: 0;
     }
 
     .pi-bio {
@@ -756,15 +761,11 @@
 
       <article class="research-item">
         <div class="research-figure">
-          <img
-            src="InfrasRead.png"
-            alt="Roadway infrastructure readiness for automated driving"
-          />
+          <img src="InfrasRead.png" alt="Roadway infrastructure readiness for automated driving" />
         </div>
 
         <div class="research-content">
           <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
-
           <p>
             Evaluating roadway infrastructure from the automated-driving perspective
             to determine how reliably automated driving systems can operate across
@@ -784,15 +785,11 @@
 
       <article class="research-item">
         <div class="research-figure">
-          <img
-            src="crashalign.png"
-            alt="CrashAlign crash detection and understanding"
-          />
+          <img src="crashalign.png" alt="CrashAlign crash detection and understanding" />
         </div>
 
         <div class="research-content">
           <h3>CrashAlign: End-to-End Crash Detection and Understanding</h3>
-
           <p>
             An end-to-end framework for recognizing crashes in traffic videos,
             locating when and where they occur, and interpreting what happened
@@ -812,15 +809,11 @@
 
       <article class="research-item">
         <div class="research-figure">
-          <img
-            src="anchorreasoning.jpg"
-            alt="AnchorReasoning visually grounded reasoning for end-to-end driving"
-          />
+          <img src="anchorreasoning.jpg" alt="AnchorReasoning" />
         </div>
 
         <div class="research-content">
           <h3>AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving</h3>
-
           <p>
             A visually grounded chain-of-thought dataset built on WOD-E2E, with
             416K frames and 395K decision-critical elements, that teaches
@@ -841,15 +834,11 @@
 
       <article class="research-item">
         <div class="research-figure">
-          <img
-            src="gripfusion.jpg"
-            alt="GRIP-Fusion roadside camera and LiDAR perception"
-          />
+          <img src="gripfusion.jpg" alt="GRIP-Fusion" />
         </div>
 
         <div class="research-content">
           <h3>GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety</h3>
-
           <p>
             Sponsored by GDOT, this project collects a new roadside intersection
             dataset with LiDAR, camera and traffic-conflict labels, and develops
@@ -870,15 +859,11 @@
 
       <article class="research-item">
         <div class="research-figure">
-          <img
-            src="egomaneuver.jpg"
-            alt="EgoManeuver fine-grained ego-vehicle action recognition"
-          />
+          <img src="egomaneuver.jpg" alt="EgoManeuver" />
         </div>
 
         <div class="research-content">
           <h3>EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition</h3>
-
           <p>
             A benchmark that unifies seven public driving datasets
             (86.6K segments, 190.8 hours of video) into 16 lateral and
@@ -904,7 +889,6 @@
 
         <div class="research-content">
           <h3>Evaluating Speed Reduction Techniques in Construction Zones to Improve Safety</h3>
-
           <p>
             Sponsored by GDOT and FHWA, this study evaluates traditional and
             innovative speed reduction techniques in Georgia construction work
@@ -922,24 +906,25 @@
 
     <div class="fade-in">
       <p class="section-label">Principal Investigator</p>
-      <h2 class="section-title">Qianwen (Cami) Li, Ph.D.</h2>
     </div>
 
     <div class="pi-card fade-in">
 
-      <div class="pi-avatar">
-        <img
-          src="QL.jpg"
-          alt="Dr. Qianwen Li"
-          style="width:100%;height:100%;object-fit:cover;object-position:top;"
-        />
+      <div class="pi-left">
+        <div class="pi-avatar">
+          <img
+            src="QL.jpg"
+            alt="Dr. Qianwen Li"
+            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+          />
+        </div>
+
+        <h2 class="pi-name">
+          Qianwen (Cami) Li, Ph.D.
+        </h2>
       </div>
 
       <div>
-        <p class="pi-title">
-          Assistant Professor · ECAM, University of Georgia
-        </p>
-
         <p class="pi-bio">
           Dr. Li is an Assistant Professor at the School of Environmental,
           Civil, Agricultural and Mechanical Engineering (ECAM) at the
@@ -980,7 +965,6 @@
 
         <a href="mailto:Cami.Li@uga.edu" class="pi-contact">
           Cami.Li@uga.edu
-
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path
               d="M2 7h10M7 2l5 5-5 5"
@@ -998,11 +982,7 @@
     <!-- CURRENT STUDENTS -->
     <div class="fade-in" style="margin-top:5rem;">
       <p class="section-label">Current Lab Members</p>
-
-      <h2
-        class="section-title"
-        style="font-size:1.8rem;margin-bottom:2.5rem;"
-      >
+      <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2.5rem;">
         Students
       </h2>
     </div>
@@ -1010,7 +990,6 @@
     <div class="students-grid fade-in">
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="ZB.jpg"
@@ -1042,7 +1021,6 @@
           >
             hzxbzp.github.io
           </a>
-
           <br />
 
           <a href="mailto:zb28097@uga.edu" class="student-email">
@@ -1052,7 +1030,6 @@
       </div>
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="WZ.jpg"
@@ -1083,7 +1060,6 @@
       </div>
 
       <div class="student-card">
-
         <div class="student-avatar">
           <img
             src="YL.png"
@@ -1130,18 +1106,15 @@
         <div class="alumni-item">
           <span class="alumni-name">Zoe Eckrich</span>
           <span class="alumni-role">
-            Undergraduate Intern · Mechanical Engineering,
-            Clemson University · Summer 2026
+            Undergraduate Intern · Mechanical Engineering, Clemson University · Summer 2026
           </span>
         </div>
 
         <div class="alumni-item">
           <span class="alumni-name">Mac McFarland</span>
-
           <span class="alumni-role">
             Young Dawgs Student · North Oconee High School · Fall 2025
           </span>
-
           <span class="alumni-note">
             License Plate Recognition System — <strong>First Prize</strong>
           </span>
@@ -1149,7 +1122,6 @@
 
         <div class="alumni-item">
           <span class="alumni-name">Myviord Djaja</span>
-
           <span class="alumni-role">
             Undergraduate · Computer Systems Engineering, UGA · Spring 2026
           </span>
@@ -1157,7 +1129,6 @@
 
         <div class="alumni-item">
           <span class="alumni-name">Baodian Zhang</span>
-
           <span class="alumni-role">
             Undergraduate · Mechanical Engineering, UGA · Spring 2026
           </span>
@@ -1179,7 +1150,6 @@
     <div class="join-body fade-in">
 
       <div class="join-text">
-
         <p>
           The CAMIs Lab is actively recruiting highly motivated Ph.D. students
           to work on the next generation of connected and automated
@@ -1209,11 +1179,9 @@
             />
           </svg>
         </a>
-
       </div>
 
       <div class="join-qualifications">
-
         <h3>
           We're especially interested in candidates with backgrounds in:
         </h3>
@@ -1236,7 +1204,6 @@
           Please include your CV, class ranking, and undergraduate/graduate
           transcripts in your inquiry.
         </p>
-
       </div>
 
     </div>
@@ -1244,7 +1211,6 @@
 
   <!-- FOOTER -->
   <footer>
-
     <div class="footer-logo">
       CAMIs Lab @ UGA
     </div>
@@ -1254,7 +1220,6 @@
       <br />
       200 D. W. Brooks Drive, Athens, GA 30602
     </div>
-
   </footer>
 
   <script>
