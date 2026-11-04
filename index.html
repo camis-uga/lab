@@ -276,7 +276,6 @@
       text-decoration: underline;
     }
 
-    /* VIEW ALL NEWS */
     .news-more {
       max-width: 1120px;
       margin-top: 1.5rem;
@@ -320,10 +319,6 @@
     .news-more[open] summary::after {
       content: "Show Less ↑";
       font-size: 0.75rem;
-    }
-
-    .news-grid-more {
-      margin-top: 0;
     }
 
     /* RESEARCH */
@@ -701,35 +696,45 @@
       color: #fff;
     }
 
-    .join-body {
+    .join-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
       align-items: start;
+
+      max-width: 1120px;
+      padding: 3rem;
+
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .join-text {
+    .join-main h3 {
+      margin-bottom: 1rem;
+
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: #fff;
+    }
+
+    .join-intro {
+      max-width: 42ch;
+
       color: rgba(255,255,255,0.65);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .join-text p + p {
-      margin-top: 1rem;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .join-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
 
-      margin-top: 2rem;
-      padding: 0.85rem 2rem;
+      margin-top: 1.8rem;
+      padding: 0.8rem 1.6rem;
 
       background: var(--red);
       color: #fff;
 
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -742,17 +747,12 @@
       opacity: 0.85;
     }
 
-    .join-qualifications {
-      padding: 2.5rem;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
+    .join-subtitle {
+      margin-bottom: 1rem;
 
-    .join-qualifications h3 {
-      margin-bottom: 1.5rem;
-
-      color: rgba(255,255,255,0.9);
-      font-family: var(--serif);
-      font-size: 1.3rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
     .qual-list {
@@ -764,19 +764,26 @@
       align-items: baseline;
       gap: 0.75rem;
 
-      padding: 0.6rem 0;
+      padding: 0.55rem 0;
 
       color: rgba(255,255,255,0.6);
       border-bottom: 1px solid rgba(255,255,255,0.06);
 
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     .qual-list li::before {
       content: '→';
       color: var(--red);
-      font-size: 0.85rem;
       flex-shrink: 0;
+    }
+
+    .join-note {
+      margin-top: 1.4rem;
+
+      color: rgba(255,255,255,0.38);
+      font-size: 0.8rem;
+      line-height: 1.6;
     }
 
     /* FOOTER */
@@ -855,7 +862,6 @@
       }
 
       .pi-card,
-      .join-body,
       .students-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -873,6 +879,12 @@
       }
 
       .research-content {
+        padding: 2rem;
+      }
+
+      .join-card {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
         padding: 2rem;
       }
 
@@ -910,7 +922,6 @@
 
   <!-- NAV -->
   <nav>
-
     <a href="#" class="nav-logo">
       <img
         src="CAMIs.png"
@@ -925,14 +936,12 @@
       <li><a href="#people">People</a></li>
       <li><a href="#join">Join</a></li>
     </ul>
-
   </nav>
 
   <!-- HERO -->
   <div class="hero">
 
     <div class="hero-text">
-
       <p class="hero-label">
         University of Georgia · Athens, GA
       </p>
@@ -961,11 +970,9 @@
         safety, sustainability, and efficiency — bridging data, theory,
         and real-world practice.
       </p>
-
     </div>
 
     <div class="hero-visual">
-
       <img
         src="AV.JPG"
         alt="CAMIs Lab autonomous vehicle"
@@ -1007,7 +1014,6 @@
         </span>
 
       </div>
-
     </div>
 
   </div>
@@ -1016,25 +1022,14 @@
   <section id="news">
 
     <div class="fade-in">
-
-      <p class="section-label">
-        News
-      </p>
-
-      <h2 class="section-title">
-        Latest News
-      </h2>
-
+      <p class="section-label">News</p>
+      <h2 class="section-title">Latest News</h2>
     </div>
 
     <div class="news-grid fade-in">
 
-      <!-- NEWS 1 -->
       <article class="news-card">
-
-        <div class="news-date">
-          November 6, 2026
-        </div>
+        <div class="news-date">November 6, 2026</div>
 
         <h3>
           Future Mobility Living Lab Seminar: Dr. Wei Fan on Transportation
@@ -1049,15 +1044,10 @@
         >
           Read More →
         </a>
-
       </article>
 
-      <!-- NEWS 2 -->
       <article class="news-card">
-
-        <div class="news-date">
-          October 20, 2026
-        </div>
+        <div class="news-date">October 20, 2026</div>
 
         <h3>
           NHTSA Deputy Administrator Lee White Visits UGA; CAMIs Lab
@@ -1072,15 +1062,10 @@
         >
           Read More →
         </a>
-
       </article>
 
-      <!-- NEWS 3 -->
       <article class="news-card">
-
-        <div class="news-date">
-          October 9, 2026
-        </div>
+        <div class="news-date">October 9, 2026</div>
 
         <h3>
           Future Mobility Living Lab Seminar: Dr. Meilin Liu on
@@ -1095,26 +1080,20 @@
         >
           Read More →
         </a>
-
       </article>
 
     </div>
 
-    <!-- MORE NEWS -->
     <details class="news-more fade-in">
 
       <summary>
         View All News →
       </summary>
 
-      <div class="news-grid news-grid-more">
+      <div class="news-grid">
 
-        <!-- NEWS 4 -->
         <article class="news-card">
-
-          <div class="news-date">
-            September 11, 2026
-          </div>
+          <div class="news-date">September 11, 2026</div>
 
           <h3>
             Future Mobility Living Lab Seminar: Dr. Jun Chen on Integrating
@@ -1129,15 +1108,10 @@
           >
             Read More →
           </a>
-
         </article>
 
-        <!-- NEWS 5 -->
         <article class="news-card">
-
-          <div class="news-date">
-            August 2026
-          </div>
+          <div class="news-date">August 2026</div>
 
           <h3>
             Future Mobility Living Lab Seminar: Dr. Yichang James Tsai on
@@ -1152,7 +1126,6 @@
           >
             Read More →
           </a>
-
         </article>
 
       </div>
@@ -1165,15 +1138,8 @@
   <section id="research">
 
     <div class="fade-in">
-
-      <p class="section-label">
-        Research
-      </p>
-
-      <h2 class="section-title">
-        Research Projects
-      </h2>
-
+      <p class="section-label">Research</p>
+      <h2 class="section-title">Research Projects</h2>
     </div>
 
     <div class="research-grid fade-in">
@@ -1188,7 +1154,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             Roadway Infrastructure Readiness for Automated Driving
           </h3>
@@ -1208,7 +1173,6 @@
           >
             View Project on GitHub →
           </a>
-
         </div>
 
       </article>
@@ -1223,7 +1187,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             CrashAlign: End-to-End Crash Detection and Understanding
           </h3>
@@ -1242,7 +1205,6 @@
           >
             View Project on GitHub →
           </a>
-
         </div>
 
       </article>
@@ -1257,7 +1219,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving
           </h3>
@@ -1277,7 +1238,6 @@
           >
             View Project on GitHub →
           </a>
-
         </div>
 
       </article>
@@ -1292,7 +1252,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety
           </h3>
@@ -1313,7 +1272,6 @@
           >
             View Project on GitHub →
           </a>
-
         </div>
 
       </article>
@@ -1328,7 +1286,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition
           </h3>
@@ -1348,7 +1305,6 @@
           >
             View Project on GitHub →
           </a>
-
         </div>
 
       </article>
@@ -1360,7 +1316,6 @@
         </div>
 
         <div class="research-content">
-
           <h3>
             Evaluating Speed Reduction Techniques in Construction Zones
             to Improve Safety
@@ -1373,7 +1328,6 @@
             recommendations that reduce crashes, injuries and fatalities
             among workers and the motoring public.
           </p>
-
         </div>
 
       </article>
@@ -1500,7 +1454,6 @@
       class="fade-in"
       style="margin-top:5rem;"
     >
-
       <p class="section-label">
         Current Lab Members
       </p>
@@ -1511,7 +1464,6 @@
       >
         Students
       </h2>
-
     </div>
 
     <div class="students-grid fade-in">
@@ -1787,46 +1739,33 @@
 
     </div>
 
-    <div class="join-body fade-in">
+    <div class="join-card fade-in">
 
-      <div class="join-text">
+      <div class="join-main">
 
-        <p>
-          The CAMIs Lab is actively recruiting highly motivated
-          Ph.D. students to work on the next generation of connected
-          and automated transportation systems.
+        <h3>
+          Ph.D. Opportunities
+        </h3>
+
+        <p class="join-intro">
+          CAMIs Lab is recruiting highly motivated Ph.D. students interested in
+          connected and automated transportation systems.
         </p>
 
         <a
           href="mailto:Cami.Li@uga.edu?subject=PhD Inquiry – CAMIs Lab"
           class="join-cta"
         >
-          Send Your Application
-
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-          >
-            <path
-              d="M2 7h10M7 2l5 5-5 5"
-              stroke="currentColor"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
+          Send Your Application →
         </a>
 
       </div>
 
-      <div class="join-qualifications">
+      <div class="join-details">
 
-        <h3>
-          We're especially interested in candidates with backgrounds in:
-        </h3>
+        <p class="join-subtitle">
+          We are especially interested in candidates with backgrounds in:
+        </p>
 
         <ul class="qual-list">
           <li>Machine learning &amp; deep learning</li>
@@ -1836,15 +1775,9 @@
           <li>Transportation engineering</li>
         </ul>
 
-        <p
-          style="
-            margin-top:1.5rem;
-            font-size:0.85rem;
-            color:rgba(255,255,255,0.4);
-          "
-        >
-          Please include your CV, class ranking, and
-          undergraduate/graduate transcripts in your inquiry.
+        <p class="join-note">
+          Please include your CV, class ranking, and undergraduate/graduate
+          transcripts in your inquiry.
         </p>
 
       </div>
