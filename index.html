@@ -7,7 +7,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
@@ -21,7 +24,9 @@
       --sans: 'DM Sans', system-ui, sans-serif;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -40,18 +45,24 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 100;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 3rem;
+
       height: 64px;
+      padding: 0 3rem;
+
       background: var(--bg);
       border-bottom: 1px solid var(--faint);
     }
@@ -68,11 +79,11 @@
     }
 
     .nav-links a {
+      color: var(--mid);
       font-size: 0.85rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--mid);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -81,7 +92,14 @@
       color: var(--red);
     }
 
-    /* HERO */
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero-wrap {
+      position: relative;
+    }
+
     .hero {
       min-height: 75vh;
       display: grid;
@@ -93,52 +111,59 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       padding: 5rem 4rem 5rem 6rem;
     }
 
     .hero-label {
+      margin-bottom: 1.5rem;
+
+      color: var(--red);
       font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.5rem;
     }
 
     .hero-title {
+      margin-bottom: 2rem;
+
       font-family: var(--serif);
       font-size: clamp(2.8rem, 4vw, 4.2rem);
       line-height: 1.1;
       letter-spacing: -0.01em;
-      margin-bottom: 2rem;
     }
 
     .hero-title em {
-      font-style: italic;
       color: var(--red);
+      font-style: italic;
     }
 
     .hero-desc {
-      font-size: 1.05rem;
-      color: var(--mid);
       max-width: 42ch;
       margin-bottom: 2.5rem;
+
+      color: var(--mid);
+      font-size: 1.05rem;
       line-height: 1.75;
     }
 
     .hero-visual {
       position: relative;
-      background: var(--ink);
       overflow: hidden;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: var(--ink);
     }
 
     .hero-badges {
       position: absolute;
       bottom: 1.5rem;
       left: 1.5rem;
+
       display: flex;
       gap: 0.6rem;
     }
@@ -147,38 +172,180 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(0,0,0,0.65);
+
+      padding: 0.45rem 0.9rem;
+
       color: #fff;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.04em;
-      padding: 0.45rem 0.9rem;
+
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.15);
     }
 
-    /* SECTIONS */
+    /* =========================================================
+       RIGHT-SIDE FLOATING NEWS
+    ========================================================= */
+
+    #news {
+      position: absolute;
+      top: 50%;
+      right: 3rem;
+      transform: translateY(-50%);
+
+      width: min(410px, calc(100% - 6rem));
+      max-height: calc(100% - 7rem);
+      overflow-y: auto;
+
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--faint);
+      box-shadow: 0 18px 45px rgba(26, 26, 24, 0.12);
+
+      z-index: 20;
+      backdrop-filter: blur(8px);
+    }
+
+    .news-header {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .news-kicker {
+      margin-bottom: 0.25rem;
+
+      color: var(--red);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .news-heading {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .news-subtitle {
+      margin-top: 0.35rem;
+
+      color: var(--mid);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .news-list {
+      padding: 0 1.5rem;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .news-date {
+      color: var(--mid);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .news-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .news-link {
+      width: fit-content;
+      margin-top: 0.1rem;
+
+      color: var(--red);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .news-link:hover {
+      text-decoration: underline;
+    }
+
+    /* VIEW ALL NEWS */
+
+    .more-news {
+      border: none;
+    }
+
+    .more-news summary {
+      list-style: none;
+      cursor: pointer;
+
+      padding: 1rem 0;
+
+      color: var(--red);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .more-news summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .more-news summary:hover {
+      text-decoration: underline;
+    }
+
+    .more-news[open] summary {
+      font-size: 0;
+    }
+
+    .more-news[open] summary::after {
+      content: "Show Less ↑";
+      font-size: 0.75rem;
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
     section {
       padding: 6rem;
     }
 
     .section-label {
+      margin-bottom: 1rem;
+
+      color: var(--red);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1rem;
     }
 
     .section-title {
+      margin-bottom: 3.5rem;
+
       font-family: var(--serif);
       font-size: clamp(2rem, 3vw, 2.8rem);
       line-height: 1.2;
-      margin-bottom: 3.5rem;
     }
 
-    /* RESEARCH */
+    /* =========================================================
+       RESEARCH
+    ========================================================= */
+
     #research {
       background: #fff;
       border-top: 1px solid var(--faint);
@@ -188,16 +355,20 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+
       max-width: 1120px;
     }
 
     .research-item {
       display: grid;
       grid-template-columns: minmax(280px, 38%) 1fr;
+
       min-height: 245px;
+
       background: #faf9f7;
       border: 1px solid var(--faint);
       overflow: hidden;
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -206,6 +377,7 @@
 
     .research-item:hover {
       transform: translateY(-2px);
+
       border-color: #d7d2ca;
       box-shadow: 0 10px 30px rgba(26, 26, 24, 0.06);
     }
@@ -220,6 +392,7 @@
       width: 100%;
       height: 100%;
       min-height: 245px;
+
       display: block;
       object-fit: cover;
     }
@@ -228,36 +401,43 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       padding: 2.4rem 2.7rem;
     }
 
     .research-item h3 {
+      margin-bottom: 0.9rem;
+
       font-family: var(--serif);
       font-size: 1.4rem;
       line-height: 1.3;
-      margin-bottom: 0.9rem;
     }
 
     .research-item p {
-      font-size: 0.92rem;
-      color: var(--mid);
-      line-height: 1.7;
       max-width: 66ch;
+
+      color: var(--mid);
+      font-size: 0.92rem;
+      line-height: 1.7;
     }
 
     .project-link-text {
       display: inline-flex;
       align-items: center;
+
       width: fit-content;
       margin-top: 1.25rem;
+      padding-bottom: 2px;
+
       color: var(--red);
+      border-bottom: 1px solid transparent;
+
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
+
       transition: border-color 0.2s ease;
     }
 
@@ -267,18 +447,25 @@
 
     .research-placeholder {
       min-height: 245px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 2rem;
+
       background: #efede8;
       color: var(--mid);
+
       font-family: var(--serif);
       font-size: 1.1rem;
       text-align: center;
     }
 
-    /* PEOPLE */
+    /* =========================================================
+       PEOPLE
+    ========================================================= */
+
     #people {
       background: #fff;
       border-top: 1px solid var(--faint);
@@ -300,39 +487,53 @@
     .pi-avatar {
       width: 120px;
       height: 120px;
+
       border-radius: 50%;
       background: var(--faint);
+
       overflow: hidden;
       flex-shrink: 0;
     }
 
     .pi-name {
+      margin-top: 1rem;
+
       font-family: var(--serif);
       font-size: 1.3rem;
       line-height: 1.25;
-      margin-top: 1rem;
-      margin-bottom: 0;
     }
 
     .pi-bio {
-      font-size: 0.92rem;
-      color: var(--mid);
-      line-height: 1.7;
       margin-bottom: 1.8rem;
+
+      color: var(--mid);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .pi-bio a {
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(186, 32, 32, 0.3);
+    }
+
+    .pi-bio a:hover {
+      border-color: var(--red);
     }
 
     .pi-edu {
-      border-top: 1px solid var(--faint);
       padding-top: 1.4rem;
+      border-top: 1px solid var(--faint);
     }
 
     .pi-edu h4 {
+      margin-bottom: 0.9rem;
+
+      color: var(--mid);
       font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 0.9rem;
     }
 
     .edu-item {
@@ -342,20 +543,24 @@
     }
 
     .edu-detail {
-      font-size: 0.84rem;
       color: var(--mid);
+      font-size: 0.84rem;
     }
 
     .pi-contact {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.82rem;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 1px;
+
       margin-top: 0.9rem;
+      padding-bottom: 1px;
+
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+
+      font-size: 0.82rem;
+      text-decoration: none;
+
       transition: color 0.2s, border-color 0.2s;
     }
 
@@ -364,7 +569,10 @@
       border-color: var(--red);
     }
 
-    /* STUDENTS */
+    /* =========================================================
+       STUDENTS
+    ========================================================= */
+
     .students-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -375,70 +583,82 @@
       display: flex;
       gap: 1.5rem;
       align-items: flex-start;
+
+      padding: 1.75rem;
+
       background: #fff;
       border: 1px solid var(--faint);
-      padding: 1.75rem;
     }
 
     .student-avatar {
       width: 120px;
       height: 120px;
-      border-radius: 50%;
-      background: var(--red-light);
-      color: var(--red);
-      font-family: var(--serif);
-      font-size: 1.1rem;
+
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+
       overflow: hidden;
+
+      border-radius: 50%;
+      background: var(--red-light);
+      color: var(--red);
+
+      font-family: var(--serif);
+      font-size: 1.1rem;
     }
 
     .student-name {
+      margin-bottom: 0.2rem;
+
       font-family: var(--serif);
       font-size: 1.15rem;
-      margin-bottom: 0.2rem;
     }
 
     .student-degree {
+      color: var(--red);
+
       font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--red);
     }
 
     .student-year {
-      font-size: 0.8rem;
-      color: var(--mid);
       margin-bottom: 0.75rem;
+
+      color: var(--mid);
+      font-size: 0.8rem;
     }
 
     .student-bio {
-      font-size: 0.9rem;
-      color: var(--mid);
-      line-height: 1.65;
       margin-bottom: 0.75rem;
+
+      color: var(--mid);
+      font-size: 0.9rem;
+      line-height: 1.65;
     }
 
     .student-edu {
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
+
       margin-bottom: 0.75rem;
     }
 
     .student-edu span {
-      font-size: 0.8rem;
       color: var(--mid);
+      font-size: 0.8rem;
     }
 
     .student-email {
-      font-size: 0.82rem;
       color: var(--ink);
-      text-decoration: none;
       border-bottom: 1px solid var(--faint);
+
+      font-size: 0.82rem;
+      text-decoration: none;
     }
 
     .student-email:hover {
@@ -451,10 +671,14 @@
       margin-bottom: 0.4rem;
     }
 
-    /* ALUMNI */
+    /* =========================================================
+       ALUMNI
+    ========================================================= */
+
     .alumni-list {
       display: flex;
       flex-direction: column;
+
       border: 1px solid var(--faint);
     }
 
@@ -462,9 +686,11 @@
       display: flex;
       align-items: baseline;
       gap: 1.5rem;
-      padding: 1.1rem 1.5rem;
-      border-bottom: 1px solid var(--faint);
       flex-wrap: wrap;
+
+      padding: 1.1rem 1.5rem;
+
+      border-bottom: 1px solid var(--faint);
     }
 
     .alumni-item:last-child {
@@ -472,26 +698,32 @@
     }
 
     .alumni-name {
+      min-width: 160px;
+
       font-family: var(--serif);
       font-size: 1rem;
-      min-width: 160px;
     }
 
     .alumni-role {
-      font-size: 0.88rem;
-      color: var(--mid);
       flex: 1;
+
+      color: var(--mid);
+      font-size: 0.88rem;
     }
 
     .alumni-note {
-      font-size: 0.82rem;
       color: var(--red);
+      font-size: 0.82rem;
     }
 
-    /* JOIN */
+    /* =========================================================
+       JOIN
+    ========================================================= */
+
     #join {
       background: var(--ink);
       color: #fff;
+
       border-top: 1px solid #333;
     }
 
@@ -511,8 +743,8 @@
     }
 
     .join-text {
+      color: rgba(255, 255, 255, 0.65);
       font-size: 1.05rem;
-      color: rgba(255,255,255,0.65);
       line-height: 1.8;
     }
 
@@ -524,15 +756,19 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
+
+      margin-top: 2rem;
+      padding: 0.85rem 2rem;
+
       background: var(--red);
       color: #fff;
+
       font-size: 0.85rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 0.85rem 2rem;
-      margin-top: 2rem;
+
       transition: opacity 0.2s;
     }
 
@@ -541,15 +777,16 @@
     }
 
     .join-qualifications {
-      border: 1px solid rgba(255,255,255,0.1);
       padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .join-qualifications h3 {
+      margin-bottom: 1.5rem;
+
+      color: rgba(255, 255, 255, 0.9);
       font-family: var(--serif);
       font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      color: rgba(255,255,255,0.9);
     }
 
     .qual-list {
@@ -560,47 +797,62 @@
       display: flex;
       align-items: baseline;
       gap: 0.75rem;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
+
       padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+
+      color: rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+      font-size: 0.95rem;
     }
 
     .qual-list li::before {
       content: '→';
+
       color: var(--red);
       font-size: 0.85rem;
       flex-shrink: 0;
     }
 
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
-      background: var(--ink);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 2.5rem 6rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      padding: 2.5rem 6rem;
+
+      background: var(--ink);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .footer-logo {
+      color: rgba(255, 255, 255, 0.4);
       font-family: var(--serif);
       font-size: 1rem;
-      color: rgba(255,255,255,0.4);
     }
 
     .footer-address {
+      color: rgba(255, 255, 255, 0.3);
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.3);
-      text-align: right;
       line-height: 1.6;
+      text-align: right;
     }
 
-    /* ANIMATIONS */
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
     }
 
     .fade-in.visible {
@@ -608,14 +860,18 @@
       transform: none;
     }
 
-    /* RESPONSIVE */
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
     @media (max-width: 900px) {
+
       nav {
         padding: 0 1.5rem;
       }
 
       .nav-links {
-        gap: 1.5rem;
+        gap: 1.2rem;
       }
 
       .hero {
@@ -629,6 +885,18 @@
 
       .hero-visual {
         min-height: 280px;
+      }
+
+      #news {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: calc(100% - 4rem);
+        max-height: none;
+
+        margin: -2rem auto 3rem;
       }
 
       section {
@@ -660,8 +928,10 @@
       footer {
         flex-direction: column;
         gap: 1rem;
-        text-align: center;
+
         padding: 2rem;
+
+        text-align: center;
       }
 
       .footer-address {
@@ -670,6 +940,25 @@
     }
 
     @media (max-width: 600px) {
+
+      .nav-links {
+        gap: 0.7rem;
+      }
+
+      .nav-links a {
+        font-size: 0.68rem;
+      }
+
+      #news {
+        width: calc(100% - 2rem);
+      }
+
+      .news-header,
+      .news-list {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
       .research-content {
         padding: 1.6rem;
       }
@@ -679,97 +968,363 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
   <nav>
     <a href="#" class="nav-logo">
       <img
         src="CAMIs.png"
         alt="CAMIs Lab"
-        style="height:44px;width:auto;max-width:160px;object-fit:contain;display:block;"
+        style="
+          height:44px;
+          width:auto;
+          max-width:160px;
+          object-fit:contain;
+          display:block;
+        "
       />
     </a>
 
     <ul class="nav-links">
+      <li><a href="#news">News</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#people">People</a></li>
       <li><a href="#join">Join</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero">
+  <!-- =======================================================
+       HERO + FLOATING NEWS
+  ======================================================== -->
 
-    <div class="hero-text">
-      <p class="hero-label">University of Georgia · Athens, GA</p>
+  <div class="hero-wrap">
 
-      <img
-        src="CAMIs.png"
-        alt="CAMIs Lab Logo"
-        style="height:80px;width:auto;max-width:260px;object-fit:contain;margin-bottom:1.5rem;"
-      />
+    <div class="hero">
 
-      <h1 class="hero-title">
-        Cooperative<br />
-        <em>Automated</em><br />
-        Mobility<br />
-        Innovations
-      </h1>
+      <!-- HERO TEXT -->
 
-      <p class="hero-desc">
-        Advancing knowledge and technologies that enhance transportation safety,
-        sustainability, and efficiency — bridging data, theory, and real-world practice.
-      </p>
+      <div class="hero-text">
+
+        <p class="hero-label">
+          University of Georgia · Athens, GA
+        </p>
+
+        <img
+          src="CAMIs.png"
+          alt="CAMIs Lab Logo"
+          style="
+            height:80px;
+            width:auto;
+            max-width:260px;
+            object-fit:contain;
+            margin-bottom:1.5rem;
+          "
+        />
+
+        <h1 class="hero-title">
+          Cooperative<br />
+          <em>Automated</em><br />
+          Mobility<br />
+          Innovations
+        </h1>
+
+        <p class="hero-desc">
+          Advancing knowledge and technologies that enhance transportation
+          safety, sustainability, and efficiency — bridging data, theory,
+          and real-world practice.
+        </p>
+
+      </div>
+
+      <!-- HERO IMAGE -->
+
+      <div class="hero-visual">
+
+        <img
+          src="AV.JPG"
+          alt="CAMIs Lab autonomous vehicle"
+          style="
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:center 60%;
+          "
+        />
+
+        <div class="hero-badges">
+
+          <span class="hero-badge">
+
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <circle
+                cx="7"
+                cy="7"
+                r="6"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+
+              <path
+                d="M4 7l2 2 4-4"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            Fully Automated
+
+          </span>
+
+          <span class="hero-badge">
+
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M7 2v4l2.5 1.5"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+
+              <circle
+                cx="7"
+                cy="7"
+                r="5.5"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+            </svg>
+
+            100% Electric
+
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="hero-visual">
-      <img
-        src="AV.JPG"
-        alt="CAMIs Lab autonomous vehicle"
-        style="width:100%;height:100%;object-fit:cover;object-position:center 60%;"
-      />
+    <!-- =====================================================
+         FLOATING NEWS PANEL
+    ====================================================== -->
 
-      <div class="hero-badges">
-        <span class="hero-badge">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M4 7l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Fully Automated
-        </span>
+    <div id="news">
 
-        <span class="hero-badge">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 2v4l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
-          100% Electric
-        </span>
+      <div class="news-header">
+
+        <p class="news-kicker">
+          Latest News
+        </p>
+
+        <h2 class="news-heading">
+          CAMIs Lab &amp;<br />
+          Future Mobility Living Lab
+        </h2>
+
+        <p class="news-subtitle">
+          Research, demonstrations, seminars, and mobility activities at UGA
+        </p>
+
       </div>
+
+      <div class="news-list">
+
+        <!-- NOVEMBER 6 -->
+
+        <article class="news-item">
+
+          <div class="news-date">
+            November 6, 2026
+          </div>
+
+          <div class="news-title">
+            Future Mobility Living Lab Seminar: Dr. Wei Fan on
+            Transportation Engineering in the Age of AI
+          </div>
+
+          <a
+            class="news-link"
+            href="https://lnkd.in/p/e_qHVMZ4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read More →
+          </a>
+
+        </article>
+
+        <!-- OCTOBER 20 -->
+
+        <article class="news-item">
+
+          <div class="news-date">
+            October 20, 2026
+          </div>
+
+          <div class="news-title">
+            NHTSA Deputy Administrator Lee White Visits UGA;
+            CAMIs Lab Demonstrates Autonomous Vehicle Research
+          </div>
+
+          <a
+            class="news-link"
+            href="https://lnkd.in/p/em3ywHZC"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read More →
+          </a>
+
+        </article>
+
+        <!-- OCTOBER 9 -->
+
+        <article class="news-item">
+
+          <div class="news-date">
+            October 9, 2026
+          </div>
+
+          <div class="news-title">
+            Future Mobility Living Lab Seminar: Dr. Meilin Liu
+            on Niobium-Based Electrodes for High-Power Batteries
+          </div>
+
+          <a
+            class="news-link"
+            href="https://lnkd.in/p/eg4WwUz7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read More →
+          </a>
+
+        </article>
+
+        <!-- =================================================
+             VIEW ALL NEWS
+        ================================================== -->
+
+        <details class="more-news">
+
+          <summary>
+            View All News →
+          </summary>
+
+          <!-- SEPTEMBER 11 -->
+
+          <article class="news-item">
+
+            <div class="news-date">
+              September 11, 2026
+            </div>
+
+            <div class="news-title">
+              Future Mobility Living Lab Seminar: Dr. Jun Chen
+              on Integrating MPC and RL for Intelligent Electric Vehicles
+            </div>
+
+            <a
+              class="news-link"
+              href="https://lnkd.in/p/eJhrQC9E"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read More →
+            </a>
+
+          </article>
+
+          <!-- AUGUST -->
+
+          <article class="news-item">
+
+            <div class="news-date">
+              August 2026
+            </div>
+
+            <div class="news-title">
+              Future Mobility Living Lab Seminar: Dr. Yichang James Tsai
+              on AI-Enabled Horizontal Curve Safety and Autonomous Vehicle Research
+            </div>
+
+            <a
+              class="news-link"
+              href="https://lnkd.in/p/eBtVBpwT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read More →
+            </a>
+
+          </article>
+
+        </details>
+
+      </div>
+
     </div>
 
   </div>
 
-  <!-- RESEARCH -->
+  <!-- =======================================================
+       RESEARCH
+  ======================================================== -->
+
   <section id="research">
 
     <div class="fade-in">
-      <p class="section-label">Research</p>
-      <h2 class="section-title">Research Projects</h2>
+
+      <p class="section-label">
+        Research
+      </p>
+
+      <h2 class="section-title">
+        Research Projects
+      </h2>
+
     </div>
 
     <div class="research-grid fade-in">
 
+      <!-- PROJECT 1 -->
+
       <article class="research-item">
+
         <div class="research-figure">
-          <img src="InfrasRead.png" alt="Roadway infrastructure readiness for automated driving" />
+
+          <img
+            src="InfrasRead.png"
+            alt="Roadway infrastructure readiness for automated driving"
+          />
+
         </div>
 
         <div class="research-content">
-          <h3>Roadway Infrastructure Readiness for Automated Driving</h3>
+
+          <h3>
+            Roadway Infrastructure Readiness for Automated Driving
+          </h3>
+
           <p>
-            Evaluating roadway infrastructure from the automated-driving perspective
-            to determine how reliably automated driving systems can operate across
-            different road classes, infrastructure features, and roadway conditions.
+            Evaluating roadway infrastructure from the automated-driving
+            perspective to determine how reliably automated driving systems
+            can operate across different road classes, infrastructure
+            features, and roadway conditions.
           </p>
 
           <a
@@ -780,20 +1335,34 @@
           >
             View Project on GitHub →
           </a>
+
         </div>
+
       </article>
 
+      <!-- PROJECT 2 -->
+
       <article class="research-item">
+
         <div class="research-figure">
-          <img src="crashalign.png" alt="CrashAlign crash detection and understanding" />
+
+          <img
+            src="crashalign.png"
+            alt="CrashAlign crash detection and understanding"
+          />
+
         </div>
 
         <div class="research-content">
-          <h3>CrashAlign: End-to-End Crash Detection and Understanding</h3>
+
+          <h3>
+            CrashAlign: End-to-End Crash Detection and Understanding
+          </h3>
+
           <p>
-            An end-to-end framework for recognizing crashes in traffic videos,
-            locating when and where they occur, and interpreting what happened
-            and why.
+            An end-to-end framework for recognizing crashes in traffic
+            videos, locating when and where they occur, and interpreting
+            what happened and why.
           </p>
 
           <a
@@ -804,21 +1373,35 @@
           >
             View Project on GitHub →
           </a>
+
         </div>
+
       </article>
 
+      <!-- PROJECT 3 -->
+
       <article class="research-item">
+
         <div class="research-figure">
-          <img src="anchorreasoning.jpg" alt="AnchorReasoning" />
+
+          <img
+            src="anchorreasoning.jpg"
+            alt="AnchorReasoning"
+          />
+
         </div>
 
         <div class="research-content">
-          <h3>AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving</h3>
+
+          <h3>
+            AnchorReasoning: Visually Grounded Reasoning for End-to-End Driving
+          </h3>
+
           <p>
-            A visually grounded chain-of-thought dataset built on WOD-E2E, with
-            416K frames and 395K decision-critical elements, that teaches
-            vision-language driving models to link what they see to why they act
-            and how they plan.
+            A visually grounded chain-of-thought dataset built on WOD-E2E,
+            with 416K frames and 395K decision-critical elements, that
+            teaches vision-language driving models to link what they see
+            to why they act and how they plan.
           </p>
 
           <a
@@ -829,21 +1412,36 @@
           >
             View Project on GitHub →
           </a>
+
         </div>
+
       </article>
 
+      <!-- PROJECT 4 -->
+
       <article class="research-item">
+
         <div class="research-figure">
-          <img src="gripfusion.jpg" alt="GRIP-Fusion" />
+
+          <img
+            src="gripfusion.jpg"
+            alt="GRIP-Fusion"
+          />
+
         </div>
 
         <div class="research-content">
-          <h3>GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety</h3>
+
+          <h3>
+            GRIP-Fusion: Roadside Camera–LiDAR Perception for Intersection Safety
+          </h3>
+
           <p>
-            Sponsored by GDOT, this project collects a new roadside intersection
-            dataset with LiDAR, camera and traffic-conflict labels, and develops
-            GRIP-Fusion, a one-LiDAR + one-camera 3D detector that achieves
-            state-of-the-art results on three public benchmarks.
+            Sponsored by GDOT, this project collects a new roadside
+            intersection dataset with LiDAR, camera and traffic-conflict
+            labels, and develops GRIP-Fusion, a one-LiDAR + one-camera
+            3D detector that achieves state-of-the-art results on three
+            public benchmarks.
           </p>
 
           <a
@@ -854,21 +1452,35 @@
           >
             View Project on GitHub →
           </a>
+
         </div>
+
       </article>
 
+      <!-- PROJECT 5 -->
+
       <article class="research-item">
+
         <div class="research-figure">
-          <img src="egomaneuver.jpg" alt="EgoManeuver" />
+
+          <img
+            src="egomaneuver.jpg"
+            alt="EgoManeuver"
+          />
+
         </div>
 
         <div class="research-content">
-          <h3>EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition</h3>
+
+          <h3>
+            EgoManeuver: Fine-Grained Ego-Vehicle Action Recognition
+          </h3>
+
           <p>
             A benchmark that unifies seven public driving datasets
-            (86.6K segments, 190.8 hours of video) into 16 lateral and
-            6 longitudinal ego-vehicle actions, with the DenseEgo baseline
-            and an agent that retrieves driving video by maneuver.
+            (86.6K segments, 190.8 hours of video) into 16 lateral
+            and 6 longitudinal ego-vehicle actions, with the DenseEgo
+            baseline and an agent that retrieves driving video by maneuver.
           </p>
 
           <a
@@ -879,97 +1491,166 @@
           >
             View Project on GitHub →
           </a>
+
         </div>
+
       </article>
 
+      <!-- PROJECT 6 -->
+
       <article class="research-item">
+
         <div class="research-placeholder">
           Construction Work Zone Safety
         </div>
 
         <div class="research-content">
-          <h3>Evaluating Speed Reduction Techniques in Construction Zones to Improve Safety</h3>
+
+          <h3>
+            Evaluating Speed Reduction Techniques in Construction Zones
+            to Improve Safety
+          </h3>
+
           <p>
-            Sponsored by GDOT and FHWA, this study evaluates traditional and
-            innovative speed reduction techniques in Georgia construction work
-            zones to provide evidence-based recommendations that reduce crashes,
-            injuries and fatalities among workers and the motoring public.
+            Sponsored by GDOT and FHWA, this study evaluates traditional
+            and innovative speed reduction techniques in Georgia
+            construction work zones to provide evidence-based
+            recommendations that reduce crashes, injuries and fatalities
+            among workers and the motoring public.
           </p>
+
         </div>
+
       </article>
 
     </div>
+
   </section>
 
-  <!-- PEOPLE -->
+  <!-- =======================================================
+       PEOPLE
+  ======================================================== -->
+
   <section id="people">
 
+    <!-- PI -->
+
     <div class="fade-in">
-      <p class="section-label">Principal Investigator</p>
+
+      <p class="section-label">
+        Principal Investigator
+      </p>
+
     </div>
 
     <div class="pi-card fade-in">
 
       <div class="pi-left">
+
         <div class="pi-avatar">
+
           <img
             src="QL.jpg"
             alt="Dr. Qianwen Li"
-            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              object-position:top;
+            "
           />
+
         </div>
 
         <h2 class="pi-name">
           Qianwen (Cami) Li, Ph.D.
         </h2>
+
       </div>
 
       <div>
-<p class="pi-bio">
-  Dr. Li is an Assistant Professor at the School of Environmental,
-  Civil, Agricultural and Mechanical Engineering (ECAM) at the
-  University of Georgia. She is the director of the
-  <a href="https://emobility.uga.edu/activities/multidisciplinary-research/future-mobility-living-lab/"
-     target="_blank" rel="noopener noreferrer">
-    Georgia Network for Electric Mobility - Future Mobility Living Lab
-  </a>.
-  Her research interests include Connected, Automated, Electric, and Shared Mobility;
-  Smart Infrastructure Systems; and Traffic Flow Theory.
-</p>
+
+        <p class="pi-bio">
+          Dr. Li is an Assistant Professor at the School of Environmental,
+          Civil, Agricultural and Mechanical Engineering (ECAM) at the
+          University of Georgia. She is the Director of the
+          <a
+            href="https://emobility.uga.edu/activities/multidisciplinary-research/future-mobility-living-lab/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Georgia Network for Electric Mobility - Future Mobility Living Lab
+          </a>.
+          Her research interests include Connected, Automated, Electric,
+          and Shared Mobility; Smart Infrastructure Systems; and Traffic
+          Flow Theory.
+        </p>
 
         <div class="pi-edu">
-          <h4>Education</h4>
+
+          <h4>
+            Education
+          </h4>
 
           <div class="edu-item">
+
             <span class="edu-detail">
-              Ph.D. in Civil Engineering (Transportation) — University of South Florida
+
+              Ph.D. in Civil Engineering (Transportation) —
+              University of South Florida
+
               <br />
+
               <em style="font-size:0.78rem;color:var(--red)">
                 Milton Pikarsky Memorial Award — Best Doctoral Dissertation
               </em>
+
             </span>
+
           </div>
 
           <div class="edu-item">
+
             <span class="edu-detail">
-              M.S. in Civil Engineering (Transportation) — University of South Florida
+
+              M.S. in Civil Engineering (Transportation) —
+              University of South Florida
+
               <br />
+
               <em style="font-size:0.78rem;color:var(--red)">
                 Neville A. Parker Award — Best Master's Project
               </em>
+
             </span>
+
           </div>
 
           <div class="edu-item">
+
             <span class="edu-detail">
-              B.S. in Computer Science & Technology — Shandong University
+              B.S. in Computer Science &amp; Technology —
+              Shandong University
             </span>
+
           </div>
+
         </div>
 
-        <a href="mailto:Cami.Li@uga.edu" class="pi-contact">
+        <a
+          href="mailto:Cami.Li@uga.edu"
+          class="pi-contact"
+        >
+
           Cami.Li@uga.edu
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+
             <path
               d="M2 7h10M7 2l5 5-5 5"
               stroke="currentColor"
@@ -977,44 +1658,89 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             />
+
           </svg>
+
         </a>
+
       </div>
 
     </div>
 
     <!-- CURRENT STUDENTS -->
-    <div class="fade-in" style="margin-top:5rem;">
-      <p class="section-label">Current Lab Members</p>
-      <h2 class="section-title" style="font-size:1.8rem;margin-bottom:2.5rem;">
+
+    <div
+      class="fade-in"
+      style="margin-top:5rem;"
+    >
+
+      <p class="section-label">
+        Current Lab Members
+      </p>
+
+      <h2
+        class="section-title"
+        style="
+          font-size:1.8rem;
+          margin-bottom:2.5rem;
+        "
+      >
         Students
       </h2>
+
     </div>
 
     <div class="students-grid fade-in">
 
+      <!-- ZHIPENG -->
+
       <div class="student-card">
+
         <div class="student-avatar">
+
           <img
             src="ZB.jpg"
             alt="Zhipeng Bao"
-            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              object-position:top;
+            "
           />
+
         </div>
 
         <div class="student-info">
-          <h3 class="student-name">Zhipeng Bao</h3>
-          <p class="student-degree">Ph.D. · Mechanical Engineering</p>
-          <p class="student-year">Joined 2024</p>
+
+          <h3 class="student-name">
+            Zhipeng Bao
+          </h3>
+
+          <p class="student-degree">
+            Ph.D. · Mechanical Engineering
+          </p>
+
+          <p class="student-year">
+            Joined 2024
+          </p>
 
           <p class="student-bio">
-            Research interests: trajectory prediction & planning,
+            Research interests: trajectory prediction &amp; planning,
             3D computer vision, electronics, and vehicle control.
           </p>
 
           <div class="student-edu">
-            <span>M.S. Vehicle Engineering — Jilin University, 2022</span>
-            <span>B.E. Automotive Engineering (Honors) — Wuhan Univ. of Technology, 2019</span>
+
+            <span>
+              M.S. Vehicle Engineering — Jilin University, 2022
+            </span>
+
+            <span>
+              B.E. Automotive Engineering (Honors) —
+              Wuhan Univ. of Technology, 2019
+            </span>
+
           </div>
 
           <a
@@ -1025,82 +1751,159 @@
           >
             hzxbzp.github.io
           </a>
+
           <br />
 
-          <a href="mailto:zb28097@uga.edu" class="student-email">
+          <a
+            href="mailto:zb28097@uga.edu"
+            class="student-email"
+          >
             zb28097@uga.edu
           </a>
+
         </div>
+
       </div>
 
+      <!-- WENJIE -->
+
       <div class="student-card">
+
         <div class="student-avatar">
+
           <img
             src="WZ.jpg"
             alt="Wenjie Zhao"
-            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              object-position:top;
+            "
           />
+
         </div>
 
         <div class="student-info">
-          <h3 class="student-name">Wenjie Zhao</h3>
-          <p class="student-degree">Ph.D. · Civil Engineering</p>
-          <p class="student-year">Joined 2024</p>
+
+          <h3 class="student-name">
+            Wenjie Zhao
+          </h3>
+
+          <p class="student-degree">
+            Ph.D. · Civil Engineering
+          </p>
+
+          <p class="student-year">
+            Joined 2024
+          </p>
 
           <p class="student-bio">
-            Research interests: traffic flow theory, transportation economics,
-            and shared mobility systems.
+            Research interests: traffic flow theory,
+            transportation economics, and shared mobility systems.
           </p>
 
           <div class="student-edu">
-            <span>M.S. Systems Science — Beijing Jiaotong University, 2024</span>
-            <span>B.S. Applied Mathematics — Beijing Jiaotong University, 2021</span>
+
+            <span>
+              M.S. Systems Science — Beijing Jiaotong University, 2024
+            </span>
+
+            <span>
+              B.S. Applied Mathematics — Beijing Jiaotong University, 2021
+            </span>
+
           </div>
 
-          <a href="mailto:Wenjie.Zhao1@uga.edu" class="student-email">
+          <a
+            href="mailto:Wenjie.Zhao1@uga.edu"
+            class="student-email"
+          >
             Wenjie.Zhao1@uga.edu
           </a>
+
         </div>
+
       </div>
 
+      <!-- YIPING -->
+
       <div class="student-card">
+
         <div class="student-avatar">
+
           <img
             src="YL.png"
             alt="Yiping Li"
-            style="width:100%;height:100%;object-fit:cover;object-position:top;"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              object-position:top;
+            "
           />
+
         </div>
 
         <div class="student-info">
-          <h3 class="student-name">Yiping Li</h3>
-          <p class="student-degree">Ph.D. · Civil Engineering</p>
-          <p class="student-year">Joined 2025</p>
+
+          <h3 class="student-name">
+            Yiping Li
+          </h3>
+
+          <p class="student-degree">
+            Ph.D. · Civil Engineering
+          </p>
+
+          <p class="student-year">
+            Joined 2025
+          </p>
 
           <p class="student-bio">
-            Research interests: autonomous driving, cooperative perception,
-            and AI in transportation.
+            Research interests: autonomous driving,
+            cooperative perception, and AI in transportation.
           </p>
 
           <div class="student-edu">
-            <span>B.E. Software Engineering — Shandong University, 2025</span>
+
+            <span>
+              B.E. Software Engineering — Shandong University, 2025
+            </span>
+
           </div>
 
-          <a href="mailto:Yiping.Li@uga.edu" class="student-email">
+          <a
+            href="mailto:Yiping.Li@uga.edu"
+            class="student-email"
+          >
             Yiping.Li@uga.edu
           </a>
+
         </div>
+
       </div>
 
     </div>
 
-    <!-- FORMER MEMBERS -->
-    <div class="fade-in" style="margin-top:4rem;">
-      <p class="section-label">Alumni</p>
+    <!-- =====================================================
+         FORMER MEMBERS
+    ====================================================== -->
+
+    <div
+      class="fade-in"
+      style="margin-top:4rem;"
+    >
+
+      <p class="section-label">
+        Alumni
+      </p>
 
       <h2
         class="section-title"
-        style="font-size:1.8rem;margin-bottom:2rem;"
+        style="
+          font-size:1.8rem;
+          margin-bottom:2rem;
+        "
       >
         Former Lab Members
       </h2>
@@ -1108,72 +1911,117 @@
       <div class="alumni-list">
 
         <div class="alumni-item">
-          <span class="alumni-name">Zoe Eckrich</span>
-          <span class="alumni-role">
-            Undergraduate Intern · Mechanical Engineering, Clemson University · Summer 2026
+
+          <span class="alumni-name">
+            Zoe Eckrich
           </span>
+
+          <span class="alumni-role">
+            Undergraduate Intern · Mechanical Engineering,
+            Clemson University · Summer 2026
+          </span>
+
         </div>
 
         <div class="alumni-item">
-          <span class="alumni-name">Mac McFarland</span>
+
+          <span class="alumni-name">
+            Mac McFarland
+          </span>
+
           <span class="alumni-role">
             Young Dawgs Student · North Oconee High School · Fall 2025
           </span>
+
           <span class="alumni-note">
-            License Plate Recognition System — <strong>First Prize</strong>
+            License Plate Recognition System —
+            <strong>First Prize</strong>
           </span>
+
         </div>
 
         <div class="alumni-item">
-          <span class="alumni-name">Myviord Djaja</span>
-          <span class="alumni-role">
-            Undergraduate · Computer Systems Engineering, UGA · Spring 2026
+
+          <span class="alumni-name">
+            Myviord Djaja
           </span>
+
+          <span class="alumni-role">
+            Undergraduate · Computer Systems Engineering,
+            UGA · Spring 2026
+          </span>
+
         </div>
 
         <div class="alumni-item">
-          <span class="alumni-name">Baodian Zhang</span>
-          <span class="alumni-role">
-            Undergraduate · Mechanical Engineering, UGA · Spring 2026
+
+          <span class="alumni-name">
+            Baodian Zhang
           </span>
+
+          <span class="alumni-role">
+            Undergraduate · Mechanical Engineering,
+            UGA · Spring 2026
+          </span>
+
         </div>
 
       </div>
+
     </div>
 
   </section>
 
-  <!-- JOIN -->
+  <!-- =======================================================
+       JOIN
+  ======================================================== -->
+
   <section id="join">
 
     <div class="fade-in">
-      <p class="section-label">Opportunities</p>
-      <h2 class="section-title">Join the Lab</h2>
+
+      <p class="section-label">
+        Opportunities
+      </p>
+
+      <h2 class="section-title">
+        Join the Lab
+      </h2>
+
     </div>
 
     <div class="join-body fade-in">
 
       <div class="join-text">
+
         <p>
-          The CAMIs Lab is actively recruiting highly motivated Ph.D. students
-          to work on the next generation of connected and automated
-          transportation systems.
+          The CAMIs Lab is actively recruiting highly motivated
+          Ph.D. students to work on the next generation of connected
+          and automated transportation systems.
         </p>
 
         <p>
-          We are a collaborative, interdisciplinary group committed to rigorous
-          science and meaningful real-world impact. Students will have access to
-          full-scale and reduced-scale CAV testbeds, industry partnerships, and
-          a supportive mentorship environment.
+          We are a collaborative, interdisciplinary group committed
+          to rigorous science and meaningful real-world impact.
+          Students will have access to full-scale and reduced-scale
+          CAV testbeds, industry partnerships, and a supportive
+          mentorship environment.
         </p>
 
         <a
           href="mailto:Cami.Li@uga.edu?subject=PhD Inquiry – CAMIs Lab"
           class="join-cta"
         >
+
           Send Your Application
 
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+
             <path
               d="M2 7h10M7 2l5 5-5 5"
               stroke="currentColor"
@@ -1181,21 +2029,41 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             />
+
           </svg>
+
         </a>
+
       </div>
 
       <div class="join-qualifications">
+
         <h3>
           We're especially interested in candidates with backgrounds in:
         </h3>
 
         <ul class="qual-list">
-          <li>Machine learning & deep learning</li>
-          <li>Optimization theory & methods</li>
-          <li>Control theory & robotics</li>
-          <li>Computer vision & sensor fusion</li>
-          <li>Transportation engineering</li>
+
+          <li>
+            Machine learning &amp; deep learning
+          </li>
+
+          <li>
+            Optimization theory &amp; methods
+          </li>
+
+          <li>
+            Control theory &amp; robotics
+          </li>
+
+          <li>
+            Computer vision &amp; sensor fusion
+          </li>
+
+          <li>
+            Transportation engineering
+          </li>
+
         </ul>
 
         <p
@@ -1205,16 +2073,22 @@
             color:rgba(255,255,255,0.4);
           "
         >
-          Please include your CV, class ranking, and undergraduate/graduate
-          transcripts in your inquiry.
+          Please include your CV, class ranking, and
+          undergraduate/graduate transcripts in your inquiry.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
-  <!-- FOOTER -->
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
   <footer>
+
     <div class="footer-logo">
       CAMIs Lab @ UGA
     </div>
@@ -1224,22 +2098,35 @@
       <br />
       200 D. W. Brooks Drive, Athens, GA 30602
     </div>
+
   </footer>
 
+  <!-- =======================================================
+       ANIMATION SCRIPT
+       No JavaScript is needed for View All News.
+  ======================================================== -->
+
   <script>
+
     const observer = new IntersectionObserver(
-      (entries) =>
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           }
-        }),
-      { threshold: 0.1 }
+        });
+      },
+      {
+        threshold: 0.1
+      }
     );
 
     document
       .querySelectorAll('.fade-in')
-      .forEach((element) => observer.observe(element));
+      .forEach((element) => {
+        observer.observe(element);
+      });
+
   </script>
 
 </body>
