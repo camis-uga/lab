@@ -915,6 +915,26 @@
         padding: 1.6rem;
       }
     }
+    /* Full, uncropped 3:2 figures */
+    .research-item .research-figure--fit {
+      display: flex;
+      align-items: center;
+      background: #faf9f7;
+    }
+
+    .research-item .research-figure--fit img {
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .research-item .research-figure--fit {
+        height: auto;
+        min-height: 0;
+      }
+    }
   </style>
 </head>
 
@@ -1241,7 +1261,7 @@
       
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="anchorreasoning.jpg"
             alt="AnchorReasoning"
@@ -1274,7 +1294,7 @@
 
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="gripfusion.jpg"
             alt="GRIP-Fusion"
@@ -1308,7 +1328,7 @@
 
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="egomaneuver.jpg"
             alt="EgoManeuver"
@@ -1341,7 +1361,7 @@
 
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="paceads.jpg"
             alt="PACE-ADS framework"
@@ -1375,7 +1395,7 @@
 
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="probingllm.jpg"
             alt="Pipeline for probing LLM driving decisions"
@@ -1409,7 +1429,7 @@
 
       <article class="research-item">
 
-        <div class="research-figure">
+        <div class="research-figure research-figure--fit">
           <img
             src="sampleverify.jpg"
             alt="Sample-and-verify planning"
@@ -1437,6 +1457,31 @@
           >
             View Project on GitHub →
           </a>
+        </div>
+
+      </article>
+
+      <article class="research-item">
+
+        <div class="research-figure research-figure--fit">
+          <img
+            src="stucksolver.jpg"
+            alt="An LLM agent helps a stuck autonomous vehicle plan a way around a blocked lane"
+          />
+        </div>
+
+        <div class="research-content">
+          <h3>
+            StuckSolver: LLM-Assisted Recovery of Immobilized Autonomous Vehicles
+          </h3>
+
+          <p>
+            A plug-in LLM agent that detects when an autonomous vehicle is
+            stuck, reasons about the cause from camera images and perception
+            data, and issues a recovery plan on its own or with passenger
+            guidance. It raises the Bench2Drive driving score of a rule-based
+            CARLA agent from 48.7 to 65.2, and to 70.9 with passenger guidance.
+          </p>
         </div>
 
       </article>
