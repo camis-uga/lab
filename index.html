@@ -328,19 +328,16 @@
     }
 
     .research-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-
       max-width: 1120px;
     }
 
     .research-item {
-      display: grid;
-      grid-template-columns: minmax(280px, 38%) 1fr;
-
-      min-height: 245px;
-
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
       background: #faf9f7;
       border: 1px solid var(--faint);
       overflow: hidden;
@@ -358,7 +355,8 @@
     }
 
     .research-figure {
-      min-height: 245px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       background: #ece9e3;
       overflow: hidden;
     }
@@ -366,8 +364,6 @@
     .research-figure img {
       width: 100%;
       height: 100%;
-      min-height: 245px;
-
       display: block;
       object-fit: cover;
     }
@@ -375,66 +371,81 @@
     .research-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-
-      padding: 2.4rem 2.7rem;
+      flex: 1;
+      padding: 1.5rem;
     }
 
     .research-item h3 {
-      margin-bottom: 0.9rem;
-
+      margin-bottom: 0.8rem;
       font-family: var(--serif);
-      font-size: 1.4rem;
-      line-height: 1.3;
+      font-size: 1.15rem;
+      line-height: 1.4;
     }
 
     .research-item p {
-      max-width: 66ch;
-
+      flex: 1;
       color: var(--mid);
-      font-size: 0.92rem;
-      line-height: 1.7;
+      font-size: 0.86rem;
+      line-height: 1.65;
     }
 
     .project-link-text {
       display: inline-flex;
       align-items: center;
-
       width: fit-content;
-      margin-top: 1.25rem;
-      padding-bottom: 2px;
-
+      margin-top: 1.2rem;
       color: var(--red);
-      border-bottom: 1px solid transparent;
-
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
-
-      transition: border-color 0.2s ease;
     }
 
     .project-link-text:hover {
-      border-color: var(--red);
+      text-decoration: underline;
     }
 
-    .research-placeholder {
-      min-height: 245px;
+    .research-more {
+      max-width: 1120px;
+      margin-top: 1.5rem;
+    }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .research-more summary {
+      display: inline-block;
+      list-style: none;
+      cursor: pointer;
+      padding: 0.75rem 1.2rem;
+      color: var(--red);
+      border: 1px solid var(--red);
+      background: transparent;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
 
-      padding: 2rem;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
 
-      background: #efede8;
-      color: var(--mid);
+    .research-more summary::-webkit-details-marker {
+      display: none;
+    }
 
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      text-align: center;
+    .research-more summary:hover {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .research-more[open] summary {
+      margin-bottom: 1.5rem;
+      font-size: 0;
+    }
+
+    .research-more[open] summary::after {
+      content: "Show Less ↑";
+      font-size: 0.75rem;
     }
 
     /* PEOPLE */
@@ -867,19 +878,12 @@
         gap: 2.5rem;
       }
 
-      .research-item {
-        grid-template-columns: 1fr;
-      }
-
-      .research-figure,
-      .research-figure img,
-      .research-placeholder {
-        min-height: 220px;
-        height: 220px;
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .research-content {
-        padding: 2rem;
+        padding: 1.4rem;
       }
 
       .join-card {
@@ -911,28 +915,12 @@
         font-size: 0.68rem;
       }
 
-      .research-content {
-        padding: 1.6rem;
+      .research-grid {
+        grid-template-columns: 1fr;
       }
-    }
-    /* Full, uncropped 3:2 figures */
-    .research-item .research-figure--fit {
-      display: flex;
-      align-items: center;
-      background: #faf9f7;
-    }
 
-    .research-item .research-figure--fit img {
-      height: auto;
-      min-height: 0;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-    }
-
-    @media (max-width: 900px) {
-      .research-item .research-figure--fit {
-        height: auto;
-        min-height: 0;
+      .research-content {
+        padding: 1.4rem;
       }
     }
   </style>
@@ -1163,8 +1151,7 @@
     </div>
 
     <div class="research-grid fade-in">
-
-      <article class="research-item">
+<article class="research-item">
 
         <div class="research-figure">
           <img
@@ -1197,7 +1184,7 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
         <div class="research-figure">
           <img
@@ -1229,7 +1216,7 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
         <div class="research-figure">
           <img
@@ -1258,10 +1245,10 @@
         </div>
 
       </article>
-      
-      <article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+<article class="research-item">
+
+        <div class="research-figure">
           <img
             src="anchorreasoning.jpg"
             alt="AnchorReasoning"
@@ -1292,9 +1279,9 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+        <div class="research-figure">
           <img
             src="gripfusion.jpg"
             alt="GRIP-Fusion"
@@ -1326,9 +1313,9 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+        <div class="research-figure">
           <img
             src="egomaneuver.jpg"
             alt="EgoManeuver"
@@ -1358,10 +1345,15 @@
         </div>
 
       </article>
+    </div>
 
-      <article class="research-item">
+    <details class="research-more fade-in">
+      <summary>View More Projects →</summary>
 
-        <div class="research-figure research-figure--fit">
+      <div class="research-grid">
+<article class="research-item">
+
+        <div class="research-figure">
           <img
             src="paceads.jpg"
             alt="PACE-ADS framework"
@@ -1393,9 +1385,9 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+        <div class="research-figure">
           <img
             src="probingllm.jpg"
             alt="Pipeline for probing LLM driving decisions"
@@ -1427,9 +1419,9 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+        <div class="research-figure">
           <img
             src="sampleverify.jpg"
             alt="Sample-and-verify planning"
@@ -1461,9 +1453,9 @@
 
       </article>
 
-      <article class="research-item">
+<article class="research-item">
 
-        <div class="research-figure research-figure--fit">
+        <div class="research-figure">
           <img
             src="stucksolver.jpg"
             alt="An LLM agent helps a stuck autonomous vehicle plan a way around a blocked lane"
@@ -1495,7 +1487,7 @@
 
       </article>
 
-        <article class="research-item">
+<article class="research-item">
 
         <div class="research-figure">
           <img
@@ -1524,8 +1516,8 @@
         </div>
 
       </article>
-      
-      <article class="research-item">
+
+<article class="research-item">
 
         <div class="research-figure">
           <img
@@ -1559,8 +1551,8 @@
         </div>
 
       </article>
-
-    </div>
+      </div>
+    </details>
 
   </section>
 
