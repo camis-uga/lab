@@ -448,6 +448,34 @@
       font-size: 0.75rem;
     }
 
+
+    /* DEMOS & FIELD TESTS */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1120px;
+    }
+
+    .demo-item {
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--faint);
+    }
+
+    .demo-item video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    @media (max-width: 700px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* PEOPLE */
     #people {
       background: #fff;
@@ -1147,6 +1175,33 @@
 
     <div class="fade-in">
       <p class="section-label">Research</p>
+    </div>
+
+    <!-- DEMOS & FIELD TESTS -->
+    <div class="fade-in" style="margin-bottom:5rem;">
+      <h2 class="section-title">Demos &amp; Field Tests</h2>
+
+      <div class="demo-grid">
+
+        <div class="demo-item">
+          <video controls playsinline preload="metadata">
+            <source src="traffic signal communication.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="demo-item">
+          <video controls playsinline preload="metadata">
+            <source src="media/demo2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="fade-in">
       <h2 class="section-title">Projects</h2>
     </div>
 
